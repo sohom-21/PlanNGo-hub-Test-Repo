@@ -23,6 +23,7 @@
          border-radius: 5px;
          box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
          font-size: 18px;
+         color: black;
 }
 .navbar ul li:nth-child(4){
          padding: 4px;

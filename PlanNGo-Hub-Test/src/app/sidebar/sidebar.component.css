@@ -1,8 +1,8 @@
 .sidebar {
          height: 100vh;
          width: 150px;
-         background-color: #1f76da;
-         color: white;
+         background-color:#c1dcf7;
+         color: rgb(7, 8, 8);
          padding: 20px;
          display: flex;
          flex-direction: column;
@@ -29,10 +29,10 @@
 
 .nav-links li {
          margin-bottom: 20px;
+         color: black;
 }
 
 .nav-links a {
-         color: white;
          text-decoration: none;
          font-size: 18px;
          display: block;
@@ -42,7 +42,8 @@
 }
 
 .nav-links a:hover {
-         background-color: #2a2de9;
+         background-color: #4042b8;
+         color: #ffffff;
 }
 
 @media (max-width: 768px) {
