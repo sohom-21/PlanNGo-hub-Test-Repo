@@ -2,12 +2,16 @@
          display: flex;
          list-style:none;
          gap: 9px;
-         justify-content: flex-end;
+}
+.navbar-div{
+         background-color: #c1dcf7;
+         width: 100vw;
+         box-sizing: border-box;
 }
 .navbar{
          width: 100vw;
+         padding: 10px;
          box-sizing: border-box;
-         height: 5rem;
          display: flex;
          flex-direction: row;
          justify-content: space-around;
@@ -23,7 +27,6 @@
          border-radius: 5px;
          box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
          font-size: 18px;
-         color: black;
 }
 .navbar ul li:nth-child(4){
          padding: 4px;
