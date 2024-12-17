@@ -1,0 +1,40 @@
+.navbar ul{
+         display: flex;
+         list-style:none;
+         gap: 9px;
+         justify-content: flex-end;
+}
+.navbar{
+         width: 100vw;
+         box-sizing: border-box;
+         height: 5rem;
+         display: flex;
+         flex-direction: row;
+         justify-content: space-around;
+         border-bottom: 1px solid black;
+}
+.navbar div{
+         align-content: center;
+}
+.navbar ul li{
+         padding: 4px;
+         margin: 4px;
+         border: 3px solid blue;
+         border-radius: 5px;
+         box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+         font-size: 18px;
+}
+.navbar ul li:nth-child(4){
+         padding: 4px;
+         margin: 4px;
+         border: 3px solid white;
+         background-color: blue;
+         color: white;
+         border-radius: 5px;
+         box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 40%);
+}
+.navbar ul li:hover{
+         background-color: blue;
+         color:white;
+}
+       
