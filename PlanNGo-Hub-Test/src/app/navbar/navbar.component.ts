@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-  <div>
+  <div class="navbar-div">
      <nav class="navbar">
       <div>
         <img class="brand-logo" src="./assets/logo.svg" alt="logo" aria-hidden="true">
