@@ -1,7 +1,8 @@
 .searchbar {
          position: absolute;
          top: 6rem;
-         right: 18rem;
+         left: 50%;
+         transform: translateX(-49%);
          display: flex;
          justify-content: center;
          align-items: center;

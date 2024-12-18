@@ -1,0 +1,53 @@
+.cabcard-body{
+         padding: 10px;
+         box-sizing: border-box;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         width: 25rem;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-140%, -40%);
+}
+.cabcard{
+         padding: 10px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.cabcard-header{
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items:center;
+         font-size: medium;
+         font-weight: bold;
+         margin-bottom: 10px;
+}
+
+.cabcard-header div{
+         border: 1px solid #050505;
+         border-radius: 4px;
+         padding: 6px;
+         background-color: rgb(41, 216, 41);
+         color: #fffbfb;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.cabcard-body{
+         margin-bottom: 10px;
+}
+.cabcard-footer{
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+}
+.cabcard-footer div{
+         border: 1px solid #050505;
+         border-radius: 4px;
+         padding: 6px;
+         background-color: rgb(53, 56, 238);
+         color: #fffbfb;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
