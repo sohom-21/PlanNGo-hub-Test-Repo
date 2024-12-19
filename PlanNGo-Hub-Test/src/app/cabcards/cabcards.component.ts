@@ -13,14 +13,18 @@ import { CommonModule } from '@angular/common';
           <div>{{cabCardDetails.available ? 'Available' : 'Not Available'}}</div>
         </div>
         <div class="cabcard-content">
-          <p>Pickup Location: {{cabCardDetails.pickupLocation}}</p>
-          <p>Dropoff Location: {{cabCardDetails.dropoffLocation}}</p>
+          <p>
+            Pickup Location: <span><img src="/assets/location-pin.svg" alt="locationsvg"></span> {{cabCardDetails.pickupLocation}}
+          </p>
+          <p>
+            Dropoff Location: <span><img src="/assets/location-pin.svg" alt="locationsvg"></span>{{cabCardDetails.dropoffLocation}}
+          </p>
           <p>Time: {{cabCardDetails.time}}</p>
           <p>Price: {{cabCardDetails.price}}</p>
         </div>
         <div class="cabcard-footer">
+          <div class="card-buttons">Ride Details</div>
           <div class="card-buttons">Book Now</div>
-          <div class="card-buttons">RiderDetails</div>
         </div>
       </div>
     </div> 

@@ -1,16 +1,16 @@
 .searchbar {
-         position: absolute;
+         /* position: absolute;
          top: 6rem;
          left: 50%;
-         transform: translateX(-49%);
+         transform: translateX(-49%); */
          display: flex;
          justify-content: center;
          align-items: center;
-         padding: 20px;
+         padding: 20px 10px;
          background-color: #c1dcf7;
          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
          border-radius: 8px;
-         margin: 20px;
+         margin: 10px auto;
          width: 60rem;
          max-width: 100%;
          box-sizing: border-box;

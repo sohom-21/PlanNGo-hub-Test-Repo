@@ -24,13 +24,20 @@
 .nav-links {
          list-style-type: none;
          padding: 0;
-         margin: 0;
+         margin: 5px;
          flex-grow: 1;
 }
 
 .nav-links li {
+         display: flex;
+         align-items: center;
+         
          margin-bottom: 20px;
          color: black;
+}
+.nav-links li img{
+         width: 12px;
+         height: 12px;
 }
 
 .nav-links a {

@@ -1,0 +1,17 @@
+.cabcard-container {
+         margin: auto;
+         max-width: 100dvw;
+         background-color: #f9f9f9;
+         border: 1px solid #929191;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         display: flex;
+         gap: 2rem;
+}
+
+.cabcards-only {
+         display: flex;
+         margin: auto;
+         flex-direction: row;
+         flex-wrap: wrap;
+         gap: 0.6rem;
+}
