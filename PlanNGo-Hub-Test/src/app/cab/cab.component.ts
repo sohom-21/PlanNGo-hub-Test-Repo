@@ -67,5 +67,37 @@ export class CabComponent {
     price: 1000,
     available: true
   },
+  {
+    rideType: 'Luxury CAB 1',
+    pickupLocation: 'Bangalore',
+    dropoffLocation: 'Bangalore',
+    time: '10:00 AM',
+    price: 1000,
+    available: true
+  },
+  {
+    rideType: 'Luxury CAB 1',
+    pickupLocation: 'Bangalore',
+    dropoffLocation: 'Bangalore',
+    time: '10:00 AM',
+    price: 1000,
+    available: true
+  },
+  {
+    rideType: 'Luxury CAB 1',
+    pickupLocation: 'Bangalore',
+    dropoffLocation: 'Bangalore',
+    time: '10:00 AM',
+    price: 1000,
+    available: true
+  },
+  {
+    rideType: 'Luxury CAB 1',
+    pickupLocation: 'Bangalore',
+    dropoffLocation: 'Bangalore',
+    time: '10:00 AM',
+    price: 1000,
+    available: true
+  },
   ];
 }

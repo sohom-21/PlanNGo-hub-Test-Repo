@@ -6,6 +6,7 @@
          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
          display: flex;
          gap: 2rem;
+         min-height: 100vh;
 }
 
 .cabcards-only {
@@ -13,5 +14,9 @@
          margin: auto;
          flex-direction: row;
          flex-wrap: wrap;
+         justify-content: space-evenly;
+         align-content: flex-start;
+         align-items: flex-start;
          gap: 0.6rem;
+         padding: 1rem;
 }
