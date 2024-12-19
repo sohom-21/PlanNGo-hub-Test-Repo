@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component,inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CabcardsComponent } from '../cabcards/cabcards.component';
 import { CabCardDetails } from '../cabcards/cabcard-details';
 import { SidebarComponent } from "../sidebar/sidebar.component";
 import { SearchbarModule } from "../searchbar/searchbar.module";
+import { CabService } from '../cab.service';
 @Component({
   selector: 'app-cab',
   standalone: true,
@@ -27,77 +28,9 @@ import { SearchbarModule } from "../searchbar/searchbar.module";
   styleUrl: './cab.component.css'
 })
 export class CabComponent {
-  cabCardDetailsList: CabCardDetails[] = [{
-    rideType: 'SUV CAB 1',
-    pickupLocation: 'Bangalore',
-    dropoffLocation: 'Bangalore',
-    time: '10:00 AM',
-    price: 1000,
-    available: true
-  },
-  {
-    rideType: 'SUV CAB 3',
-    pickupLocation: 'Bangalore',
-    dropoffLocation: 'Bangalore',
-    time: '10:00 AM',
-    price: 1000,
-    available: true
-  },
-  {
-    rideType: 'Sedan CAB 2',
-    pickupLocation: 'Bangalore',
-    dropoffLocation: 'Bangalore',
-    time: '10:00 AM',
-    price: 1000,
-    available: true
-  },
-  {
-    rideType: 'VAN 1',
-    pickupLocation: 'Bangalore',
-    dropoffLocation: 'Bangalore',
-    time: '10:00 AM',
-    price: 1000,
-    available: true
-  },
-  {
-    rideType: 'Luxury CAB 1',
-    pickupLocation: 'Bangalore',
-    dropoffLocation: 'Bangalore',
-    time: '10:00 AM',
-    price: 1000,
-    available: true
-  },
-  {
-    rideType: 'Luxury CAB 1',
-    pickupLocation: 'Bangalore',
-    dropoffLocation: 'Bangalore',
-    time: '10:00 AM',
-    price: 1000,
-    available: true
-  },
-  {
-    rideType: 'Luxury CAB 1',
-    pickupLocation: 'Bangalore',
-    dropoffLocation: 'Bangalore',
-    time: '10:00 AM',
-    price: 1000,
-    available: true
-  },
-  {
-    rideType: 'Luxury CAB 1',
-    pickupLocation: 'Bangalore',
-    dropoffLocation: 'Bangalore',
-    time: '10:00 AM',
-    price: 1000,
-    available: true
-  },
-  {
-    rideType: 'Luxury CAB 1',
-    pickupLocation: 'Bangalore',
-    dropoffLocation: 'Bangalore',
-    time: '10:00 AM',
-    price: 1000,
-    available: true
-  },
-  ];
+  cabCardDetailsList: CabCardDetails[] = [];
+  cabservice: CabService = inject(CabService);
+  constructor() {
+    this.cabCardDetailsList = this.cabservice.getcabCardDetailsList();
+  }
 }
