@@ -1,17 +1,18 @@
 .cabcard-body{
          padding: 10px;
          box-sizing: border-box;
-         border: 1px solid #ccc;
+         border: 1px solid #6d8de2;
          border-radius: 5px;
+         background-color: #c0cef7;
          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-         width: 25rem;
-         position: absolute;
+         width: 22rem;
+         /* position: absolute;
          top: 50%;
          left: 50%;
-         transform: translate(-140%, -40%);
+         transform: translate(-140%, -40%); */
 }
 .cabcard{
-         padding: 10px;
+         padding: 8px;
          border: 1px solid #ccc;
          border-radius: 5px;
          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -32,7 +33,7 @@
          padding: 6px;
          background-color: rgb(41, 216, 41);
          color: #fffbfb;
-         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .cabcard-body{
          margin-bottom: 10px;
@@ -50,4 +51,9 @@
          background-color: rgb(53, 56, 238);
          color: #fffbfb;
          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cabcard-content p img{
+         height: 14px;
+         width: 14px;
 }
