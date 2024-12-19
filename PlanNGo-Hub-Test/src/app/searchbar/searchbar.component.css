@@ -11,7 +11,7 @@
          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
          border-radius: 8px;
          margin: 10px auto;
-         width: 60rem;
+         width: 65rem;
          max-width: 100%;
          box-sizing: border-box;
 }
@@ -33,6 +33,7 @@ form {
          border-radius: 15px;
          outline: none;
          min-width: 120px;
+         margin: auto;
 }
 
 .input-field:focus,
@@ -46,7 +47,7 @@ form {
          color: white;
          background-color: #007bff;
          border: none;
-         border-radius: 5px;
+         border-radius: 6px;
          cursor: pointer;
          transition: background-color 0.3s ease;
 }
@@ -67,3 +68,13 @@ form {
                   width: 100%;
          }
 }
+.error-message {
+      color: #dc3545;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      border-radius: 4px;
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      text-align: center;
+    }

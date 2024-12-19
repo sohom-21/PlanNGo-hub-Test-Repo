@@ -5,7 +5,7 @@
          border-radius: 5px;
          background-color: #c0cef7;
          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-         width: 22rem;
+         width: 25rem;
          /* position: absolute;
          top: 50%;
          left: 50%;
@@ -13,7 +13,7 @@
 }
 .cabcard{
          padding: 8px;
-         border: 1px solid #ccc;
+         border: 1px solid #6d8de2;
          border-radius: 5px;
          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -31,9 +31,10 @@
          border: 1px solid #050505;
          border-radius: 4px;
          padding: 6px;
-         background-color: rgb(41, 216, 41);
+         background-color: rgb(70, 145, 70);
          color: #fffbfb;
          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+         
 }
 .cabcard-body{
          margin-bottom: 10px;
@@ -48,12 +49,24 @@
          border: 1px solid #050505;
          border-radius: 4px;
          padding: 6px;
-         background-color: rgb(53, 56, 238);
+         background-color: rgb(90, 92, 212);
          color: #fffbfb;
          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         cursor: pointer;
 }
 
 .cabcard-content p img{
          height: 14px;
          width: 14px;
 }
+.no-results {
+         text-align: center;
+         padding: 2rem;
+         font-size: 1.2rem;
+         color: #666;
+         width: 100%;
+         background-color: #f9f9f9;
+         border-radius: 8px;
+         margin: 1rem auto;
+ }
+       
