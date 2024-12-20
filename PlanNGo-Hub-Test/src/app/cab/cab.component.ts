@@ -46,7 +46,7 @@ export class CabComponent {
   async loadInitialCabs() {
     try {
       this.cabCardDetailsList = await this.cabservice.getcabCardDetailsList();
-      console.log('Successfully connected to db.json. Data:', this.cabCardDetailsList);
+      // console.log('Successfully connected to db.json. Data:', this.cabCardDetailsList);
     } catch (error) {
       console.error('Error loading cabs:', error);
     }
