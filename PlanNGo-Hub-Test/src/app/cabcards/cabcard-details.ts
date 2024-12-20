@@ -1,4 +1,5 @@
 export interface CabCardDetails {
+         id: string;
          rideType: string;
          pickupLocation: string;
          dropoffLocation: string;

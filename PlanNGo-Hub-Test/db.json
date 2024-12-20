@@ -1,0 +1,157 @@
+{
+         "CabCardDetailsList": [
+                  {
+                           "id": "f0b1",
+                           "rideType": "SUV CAB 1",
+                           "pickupLocation": "Bangalore, Koramangala",
+                           "dropoffLocation": "Bangalore, Whitefield",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "9c52",
+                           "rideType": "SUV CAB 1",
+                           "pickupLocation": "Bangalore, Koramangala",
+                           "dropoffLocation": "Bangalore, Whitefield",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "79a6",
+                           "rideType": "SUV CAB 1",
+                           "pickupLocation": "Bangalore, Koramangala",
+                           "dropoffLocation": "Bangalore, Whitefield",
+                           "time": "4:00 PM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "1bfe",
+                           "rideType": "SUV CAB 1",
+                           "pickupLocation": "Bangalore, Koramangala",
+                           "dropoffLocation": "Bangalore, Whitefield",
+                           "time": "9:00 PM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "3307",
+                           "rideType": "SUV CAB 1",
+                           "pickupLocation": "Bangalore, Koramangala",
+                           "dropoffLocation": "Bangalore, Whitefield",
+                           "time": "12:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "513f",
+                           "rideType": "SUV CAB 3",
+                           "pickupLocation": "Bangalore, Indiranagar",
+                           "dropoffLocation": "Bangalore, Electronic City",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "dd85",
+                           "rideType": "Sedan CAB 2",
+                           "pickupLocation": "Bangalore, Hebbal",
+                           "dropoffLocation": "Bangalore, Jayanagar",
+                           "time": "10: 00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "613b",
+                           "rideType": "VAN 1",
+                           "pickupLocation": "Bangalore, Cyber City",
+                           "dropoffLocation": "Gurugram, Sohna Road",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "4e3f",
+                           "rideType": "Luxury CAB 1",
+                           "pickupLocation": "Gurugram, DLF Phase 1",
+                           "dropoffLocation": "Gurugram, Golf Course Road",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "f5b1",
+                           "rideType": "OLA CAB 1",
+                           "pickupLocation": "Gurugram, Sector 29",
+                           "dropoffLocation": "Gurugram, Udyog Vihar",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "d3ca",
+                           "rideType": "Luxury CAB 5",
+                           "pickupLocation": "Andhra Pradesh, Vijayawada",
+                           "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "fb22",
+                           "rideType": "Luxury CAB 14",
+                           "pickupLocation": "Andhra Pradesh, Vijayawada",
+                           "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
+                           "time": "1:00 PM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "8d80",
+                           "rideType": "Luxury CAB 6",
+                           "pickupLocation": "Andhra Pradesh, Vijayawada",
+                           "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
+                           "time": "11:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "6869c",
+                           "rideType": "Luxury CAB 9",
+                           "pickupLocation": "Andhra Pradesh, Vijayawada",
+                           "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
+                           "time": "12:00 PM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "4c80",
+                           "rideType": "Luxury CAB 4",
+                           "pickupLocation": "Andhra Pradesh, Vijayawada",
+                           "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
+                           "time": "7PM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "34d9",
+                           "rideType": "Sedan CAB 4",
+                           "pickupLocation": "Andhra Pradesh, Tirupati",
+                           "dropoffLocation": "Andhra Pradesh, Guntur",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "eadd",
+                           "rideType": "OLA CAB 13",
+                           "pickupLocation": "Andhra Pradesh, Kurnool",
+                           "dropoffLocation": "Andhra Pradesh, Rajahmundry",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  }
+         ]
+}
