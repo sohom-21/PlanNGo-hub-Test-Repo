@@ -17,7 +17,9 @@ import { CabService } from '../cab.service';
       <div>
         <app-searchbar (searchEvent)="handleSearch($event)"></app-searchbar>
         <div class="cabcards-only">
-          @if (filteredDetailsList.length > 0) {
+        @if (errorMessage) {
+            <div class="no-results">{{ errorMessage }}</div>
+          }@else if (filteredDetailsList.length > 0) {
           <app-cabcards
             *ngFor="let cabCardDetails of filteredDetailsList"
             [cabCardDetails]="cabCardDetails">
@@ -39,6 +41,8 @@ export class CabComponent {
   filteredDetailsList: CabCardDetails[] = [];
   cabservice: CabService = inject(CabService);
   hasSearched: boolean = false;
+  errorMessage: string = '';
+
   
   constructor() {
     this.loadInitialCabs();
@@ -55,14 +59,26 @@ export class CabComponent {
   
   async handleSearch(searchCriteria: any) {
     this.hasSearched = true;
-    console.log('Search criteria received:', searchCriteria);
+
     try {
+      // First check if at least rideType or location is provided
+      if ((!searchCriteria.rideType && !searchCriteria.pickupLocation && !searchCriteria.dropoffLocation) && searchCriteria.time) {
+        this.errorMessage = 'Please select at least a ride type or location along with time';
+        this.filteredDetailsList = [];
+        return;
+      }
+      console.log('Search criteria received:', searchCriteria);
+
       const allCabs = await this.cabservice.getcabCardDetailsList();
       this.filteredDetailsList = allCabs.filter(cab => {
-        const rideTypeMatch = cab.rideType.toLowerCase().includes(searchCriteria.rideType.toLowerCase());
-        const pickupMatch = cab.pickupLocation.toLowerCase().trim() === searchCriteria.pickupLocation.toLowerCase().trim();
-        const dropoffMatch = cab.dropoffLocation.toLowerCase().trim() === searchCriteria.dropoffLocation.toLowerCase().trim();
-        const timeMatch = cab.time.toLowerCase().trim() === searchCriteria.time.toLowerCase().trim();
+        // Only check for a match if the criteria is provided
+        const rideTypeMatch = !searchCriteria.rideType || (searchCriteria.rideType && cab.rideType.toLowerCase().includes(searchCriteria.rideType.toLowerCase()));
+
+        const pickupMatch = !searchCriteria.pickupLocation || (searchCriteria.pickupLocation && cab.pickupLocation.toLowerCase().trim() === searchCriteria.pickupLocation.toLowerCase().trim());
+
+        const dropoffMatch = !searchCriteria.dropoffLocation ||(searchCriteria.dropoffLocation && cab.dropoffLocation.toLowerCase().trim() === searchCriteria.dropoffLocation.toLowerCase().trim());
+        
+        const timeMatch = !searchCriteria.time || (searchCriteria.time && cab.time.toLowerCase().trim() === searchCriteria.time.toLowerCase().trim());
 
         // console.log(`Matching ${cab.rideType}:`, {
         //       rideTypeMatch,
@@ -72,13 +88,13 @@ export class CabComponent {
         //     });
         return rideTypeMatch && pickupMatch && dropoffMatch && timeMatch;
       });
+
       console.log('Filtered results:', this.filteredDetailsList);
     } catch (error) {
       console.error('Error during search:', error);
     }
   }
 }
-
 // this.filteredDetailsList = this.cabCardDetailsList.filter(cab => {
 //   const rideTypeMatch = cab.rideType.toLowerCase().includes(searchCriteria.rideType.toLowerCase());
 //   const pickupMatch = cab.pickupLocation.toLowerCase().trim() === searchCriteria.pickupLocation.toLowerCase().trim();

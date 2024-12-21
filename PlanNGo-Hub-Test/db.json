@@ -74,7 +74,25 @@
                   },
                   {
                            "id": "613b",
-                           "rideType": "VAN 1",
+                           "rideType": "VAN CAB 1",
+                           "pickupLocation": "Bangalore, Cyber City",
+                           "dropoffLocation": "Gurugram, Sohna Road",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "613b",
+                           "rideType": "VAN CAB 2",
+                           "pickupLocation": "Bangalore, Cyber City",
+                           "dropoffLocation": "Gurugram, Sohna Road",
+                           "time": "10:00 AM",
+                           "price": 1000,
+                           "available": true
+                  },
+                  {
+                           "id": "613b",
+                           "rideType": "HATCHBACK CAB 1",
                            "pickupLocation": "Bangalore, Cyber City",
                            "dropoffLocation": "Gurugram, Sohna Road",
                            "time": "10:00 AM",
