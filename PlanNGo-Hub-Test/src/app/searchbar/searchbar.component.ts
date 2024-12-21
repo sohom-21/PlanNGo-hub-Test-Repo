@@ -13,7 +13,7 @@ import { Component, Output,EventEmitter } from '@angular/core';
           <option value="Luxury CAB">Luxury</option>
           <option value="Sedan CAB">Sedan</option>
           <option value="OLA CAB">OLA</option>
-          <option value="VAN">VAN</option>
+          <option value="VAN CAB">VAN</option>
         </select>
         
         <!-- Pickup Location Dropdown -->
