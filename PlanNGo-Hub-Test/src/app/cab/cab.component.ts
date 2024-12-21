@@ -46,6 +46,7 @@ export class CabComponent {
   async loadInitialCabs() {
     try {
       this.cabCardDetailsList = await this.cabservice.getcabCardDetailsList();
+      // this.filteredDetailsList = [...this.cabCardDetailsList];
       // console.log('Successfully connected to db.json. Data:', this.cabCardDetailsList);
     } catch (error) {
       console.error('Error loading cabs:', error);
@@ -63,12 +64,12 @@ export class CabComponent {
         const dropoffMatch = cab.dropoffLocation.toLowerCase().trim() === searchCriteria.dropoffLocation.toLowerCase().trim();
         const timeMatch = cab.time.toLowerCase().trim() === searchCriteria.time.toLowerCase().trim();
 
-        console.log(`Matching ${cab.rideType}:`, {
-              rideTypeMatch,
-              pickupMatch,
-              dropoffMatch,
-              timeMatch
-            });
+        // console.log(`Matching ${cab.rideType}:`, {
+        //       rideTypeMatch,
+        //       pickupMatch,
+        //       dropoffMatch,
+        //       timeMatch
+        //     });
         return rideTypeMatch && pickupMatch && dropoffMatch && timeMatch;
       });
       console.log('Filtered results:', this.filteredDetailsList);

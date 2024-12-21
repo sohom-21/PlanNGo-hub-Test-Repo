@@ -1,8 +1,9 @@
 .sidebar {
          min-height: 100vh;
          height: 100%;
-         width: 150px;
-         background-color:#c1dcf7;
+         min-width: 160px;
+         width: 100%;
+         background-color: #c1dcf7;
          color: rgb(7, 8, 8);
          padding: 20px;
          display: flex;
@@ -17,11 +18,13 @@
          font-size: 24px;
          font-weight: bold;
 }
-.divider{
+
+.divider {
          height: 1px;
          background-color: white;
          margin: 2px 0;
 }
+
 .nav-links {
          list-style-type: none;
          padding: 0;
@@ -32,11 +35,11 @@
 .nav-links li {
          display: flex;
          align-items: center;
-         
          margin-bottom: 20px;
          color: black;
 }
-.nav-links li img{
+
+.nav-links li img {
          width: 12px;
          height: 12px;
 }
@@ -45,7 +48,7 @@
          text-decoration: none;
          font-size: 18px;
          display: block;
-         padding: 10px;
+         padding: 10px 6px;
          border-radius: 4px;
          transition: background-color 0.3s ease;
 }

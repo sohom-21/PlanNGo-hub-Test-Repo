@@ -7,30 +7,79 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="cabcard-body">
-      <div class="cabcard">
+      <div class="cabcard" [class.available]="cabCardDetails.available">
         <div class="cabcard-header">
-          <h3>{{cabCardDetails.rideType}}</h3>
-          <div>{{cabCardDetails.available ? 'Available' : 'Not Available'}}</div>
+          <div class="ride-type">
+            <i class="fas fa-car"></i>
+            <h3>{{cabCardDetails.rideType}}</h3>
+          </div>
+          <div class="availability-badge" [class.not-available]="!cabCardDetails.available">
+          <i class="fas fa-check-circle fa-fade" *ngIf="cabCardDetails.available"></i>
+            {{cabCardDetails.available ? 'Available' : 'Not Available'}}
+          </div>
         </div>
         <div class="cabcard-content">
-          <p>
-            Pickup Location: <span><img src="/assets/location-pin.svg" alt="locationsvg"></span> {{cabCardDetails.pickupLocation}}
-          </p>
-          <p>
-            Dropoff Location: <span><img src="/assets/location-pin.svg" alt="locationsvg"></span>{{cabCardDetails.dropoffLocation}}
-          </p>
-          <p>Time: {{cabCardDetails.time}}</p>
-          <p>Price: {{cabCardDetails.price}}</p>
+          <div class="location">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <small>Pickup</small>
+              <p>{{cabCardDetails.pickupLocation}}</p>
+            </div>
+          </div>
+          <div class="location">
+            <i class="fas fa-flag-checkered"></i>
+            <div>
+              <small>Dropoff</small>
+              <p>{{cabCardDetails.dropoffLocation}}</p>
+            </div>
+          </div>
+          <div class="details">
+            <div class="time">
+              <i class="fas fa-clock"></i>
+              <p>Time: {{cabCardDetails.time}}</p>
+            </div>
+            <div class="price">
+              <i class="fas fa-tag"></i>
+              <p>Price: ₹{{cabCardDetails.price}}</p>
+            </div>
+          </div>
         </div>
         <div class="cabcard-footer">
-          <div class="card-buttons">Ride Details</div>
-          <div class="card-buttons">Book Now</div>
+          <button 
+          class="card-buttons"
+           (click)="onDetailsClick()"
+           [class.animate]="detailsClicked"
+           >
+            <i class="fas fa-info-circle"></i> Details
+          </button>
+          <button class="card-buttons"
+           (click)="onBookClick()"
+           [class.animate]="bookClicked"
+           >
+            <i class="fas fa-check-circle"></i> Book Now
+          </button>
         </div>
       </div>
-    </div> 
+    </div>
   `,
-  styleUrls:[ "./cabcards.component.css"]
+  styleUrls: ["./cabcards.component.css"]
 })
 export class CabcardsComponent {
   @Input() cabCardDetails!: CabCardDetails;
+  detailsClicked = false;
+  bookClicked = false;
+
+  onDetailsClick() {
+    this.detailsClicked = true;
+    setTimeout(() => {
+      this.detailsClicked = false;
+    }, 600); // Increased to match ripple animation duration
+  }
+
+  onBookClick() {
+    this.bookClicked = true;
+    setTimeout(() => {
+      this.bookClicked = false;
+    }, 600); // Increased to match ripple animation duration
+  }
 }
