@@ -15,6 +15,15 @@
                            "pickupLocation": "Bangalore, Koramangala",
                            "dropoffLocation": "Bangalore, Whitefield",
                            "time": "10:00 AM",
+                           "price": 700,
+                           "available": true
+                  },
+                  {
+                           "id": "79a6",
+                           "rideType": "SUV CAB 1",
+                           "pickupLocation": "Bangalore, Koramangala",
+                           "dropoffLocation": "Bangalore, Whitefield",
+                           "time": "10:00 AM",
                            "price": 1000,
                            "available": true
                   },
@@ -23,7 +32,7 @@
                            "rideType": "SUV CAB 1",
                            "pickupLocation": "Bangalore, Koramangala",
                            "dropoffLocation": "Bangalore, Whitefield",
-                           "time": "4:00 PM",
+                           "time": "10:00 PM",
                            "price": 1000,
                            "available": true
                   },
@@ -131,7 +140,7 @@
                            "rideType": "Luxury CAB 4",
                            "pickupLocation": "Andhra Pradesh, Vijayawada",
                            "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
-                           "time": "7PM",
+                           "time": "7:00 PM",
                            "price": 1000,
                            "available": true
                   },

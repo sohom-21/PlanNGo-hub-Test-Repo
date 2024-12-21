@@ -20,3 +20,14 @@
          gap: 0.8rem;
          padding: 1rem;
 }
+.no-results{
+         width: 100%;
+         min-width: 70dvw;
+         text-align: center;
+         padding: 2rem;
+         color: #4CAF50;
+         font-size: 1.2rem;
+         background: white;
+         border-radius: 10px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

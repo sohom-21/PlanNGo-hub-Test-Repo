@@ -1,72 +1,209 @@
-.cabcard-body{
-         padding: 10px;
-         box-sizing: border-box;
-         border: 1px solid #6d8de2;
-         border-radius: 5px;
-         background-color: #c0cef7;
-         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-         width: 25rem;
-         /* position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-140%, -40%); */
-}
-.cabcard{
-         padding: 8px;
-         border: 1px solid #6d8de2;
-         border-radius: 5px;
-         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.cabcard-header{
-         display: flex;
-         flex-direction: row;
-         justify-content: space-between;
-         align-items:center;
-         font-size: medium;
-         font-weight: bold;
-         margin-bottom: 10px;
+.cabcard {
+        isolation: isolate;
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        width: 350px;
+        margin: 1rem;
+        animation: fadeIn 0.51s ease-in-out;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.2); 
+        backdrop-filter: blur(9px); 
+        -webkit-backdrop-filter: blur(10px); 
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);       
 }
 
-.cabcard-header div{
-         border: 1px solid #050505;
-         border-radius: 4px;
-         padding: 6px;
-         background-color: rgb(70, 145, 70);
-         color: #fffbfb;
-         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-         
-}
-.cabcard-body{
-         margin-bottom: 10px;
-}
-.cabcard-footer{
-         display: flex;
-         flex-direction: row;
-         justify-content: space-between;
-         align-items: center;
-}
-.cabcard-footer div{
-         border: 1px solid #050505;
-         border-radius: 4px;
-         padding: 6px;
-         background-color: rgb(90, 92, 212);
-         color: #fffbfb;
-         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-         cursor: pointer;
+.cabcard:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.cabcard-content p img{
-         height: 14px;
-         width: 14px;
+.cabcard-header {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e5e8ec 100%);
+        padding: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 }
-.no-results {
-         text-align: center;
-         padding: 2rem;
-         font-size: 1.2rem;
-         color: #666;
-         width: 100%;
-         background-color: #f9f9f9;
-         border-radius: 8px;
-         margin: 1rem auto;
- }
-       
+
+.ride-type {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+}
+
+.availability-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        background: #d4edda;
+        color: #155724;
+}
+.availability-badge .fa-check-circle {
+        color: #4CAF50;
+}
+
+.not-available {
+        opacity: 0.7;
+        background: #afb0b1;
+        color:#000000
+}
+
+.cabcard-content {
+        padding: 1.5rem;
+}
+
+.location {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 10px;
+}
+
+.details {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #e9ecef;
+}
+
+.cabcard-footer {
+        padding: 1.5rem;
+        display: flex;
+        gap: 1rem;
+}
+
+button {
+        flex: 1;
+        padding: 0.75rem;
+        border-radius: 10px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+}
+
+.details-btn {
+        background: #e9ecef;
+        color: #495057;
+}
+
+.book-btn {
+        background: #007bff;
+        color: white;
+}
+
+button:hover {
+        transform: translateY(-2px);
+}
+
+.card-buttons {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+}
+
+/* Ride Details button styling */
+.card-buttons:first-child {
+        background: #e9ecef;
+        color: #495057;
+}
+
+/* Book Now button styling */
+.card-buttons:last-child {
+        background: #007bff;
+        color: white;
+}
+
+/* Click animation */
+.card-buttons {
+        animation-duration: 0.3s;
+        animation-timing-function: ease-out;
+}
+
+.card-buttons.animate {
+        animation-name: buttonClick;
+        transform: scale(0.95);
+}
+
+/* Warm ripple effect on click */
+.card-buttons::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+}
+
+.card-buttons.animate::after {
+        animation: ripple 0.6s ease-out;
+}
+
+/*  click animation */
+@keyframes buttonClick {
+        0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+
+        50% {
+                transform: scale(0.95);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+}
+
+/* ripple animation */
+@keyframes ripple {
+        0% {
+                transform: scale(0);
+                opacity: 1;
+        }
+
+        20% {
+                transform: scale(25);
+                opacity: 0.8;
+        }
+
+        100% {
+                opacity: 0;
+                transform: scale(40);
+        }
+}
+
+/* Hover effects */
+.card-buttons:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific hover effects for each button */
+.card-buttons:first-child:hover {
+        background: #dee2e6;
+}
+
+.card-buttons:last-child:hover {
+        background: #0056b3;
+}

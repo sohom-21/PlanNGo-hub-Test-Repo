@@ -8,12 +8,12 @@ import { Component, Output,EventEmitter } from '@angular/core';
         <!-- Ride Type -->
         <select class="select-field" [(ngModel)]="rideType" name="rideType" required>
           <option value="" disabled selected>Ride Type</option>
-          <option value="SUV">SUV</option>
-          <option value="HATCHBACK">HatchBack</option>
-          <option value="Luxury">Luxury</option>
-          <option value="Sedan">Sedan</option>
-          <option value="OLA">OLA</option>
-          <option value="VAN">VAN</option>
+          <option value="SUV CAB">SUV</option>
+          <option value="HATCHBACK CAB">HatchBack</option>
+          <option value="Luxury CAB">Luxury</option>
+          <option value="Sedan CAB">Sedan</option>
+          <option value="OLA CAB">OLA</option>
+          <option value="VAN CAB">VAN</option>
         </select>
         
         <!-- Pickup Location Dropdown -->
@@ -77,7 +77,14 @@ import { Component, Output,EventEmitter } from '@angular/core';
           <option value="8:30 PM">8:30 PM</option> 
         </select>
         <!-- Submit Button -->
-        <button type="submit" class="search-btn">Search</button>
+        <button
+         type="submit"
+          class="search-btn"
+          [class.animate]="searchClicked"
+          (click)="onSearch($event)"
+          >
+          <i class="fa-solid fa-magnifying-glass"></i>Search
+        </button>
         <!-- Error Message -->
         
         <div *ngIf="errorMessage" class="error-message">
@@ -96,11 +103,17 @@ export class SearchbarComponent {
   pickupLocation: string = '';
   dropoffLocation: string = '';
   time: string = '';
+  searchClicked = false;
 
   onSearch(event: Event) {
     event.preventDefault();
     this.errorMessage = '';
+    this.searchClicked = true;
 
+    setTimeout(() => {
+      this.searchClicked = false;
+    }, 600);
+    // Validate search criteria
     if (!this.rideType || !this.pickupLocation || !this.dropoffLocation || !this.time) {
       this.errorMessage = 'Please fill in all search criteria before searching';
       return;
@@ -111,10 +124,10 @@ export class SearchbarComponent {
       dropoffLocation: this.dropoffLocation,
       time: this.time
     };
-    console.log('Ride Type:', this.rideType);
-    console.log('Pickup Location:', this.pickupLocation);
-    console.log('Dropoff Location:', this.dropoffLocation);
-    console.log('Ride Time:', this.time);
+    // console.log('Ride Type:', this.rideType);
+    // console.log('Pickup Location:', this.pickupLocation);
+    // console.log('Dropoff Location:', this.dropoffLocation);
+    // console.log('Ride Time:', this.time);
 
     this.searchEvent.emit(searchCriteria);
   }
