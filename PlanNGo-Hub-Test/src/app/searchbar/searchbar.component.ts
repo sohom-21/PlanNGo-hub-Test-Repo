@@ -113,11 +113,18 @@ export class SearchbarComponent {
     setTimeout(() => {
       this.searchClicked = false;
     }, 600);
-    // Validate search criteria
-    if (!this.rideType || !this.pickupLocation || !this.dropoffLocation || !this.time) {
-      this.errorMessage = 'Please fill in all search criteria before searching';
+    
+    // OLD Validate search criteria
+    // if (!this.rideType || !this.pickupLocation || !this.dropoffLocation || !this.time) {
+    //   this.errorMessage = 'Please fill in all search criteria before searching';
+    //   return;
+    // }
+    
+    if (!this.rideType && !this.pickupLocation && !this.dropoffLocation && !this.time) {
+      this.errorMessage = 'Please fill in at least one search criteria before searching';
       return;
     }
+
     const searchCriteria ={
       rideType: this.rideType,
       pickupLocation: this.pickupLocation,
