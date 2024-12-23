@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CabCardDetails } from './cabcard-details';
 import { CommonModule } from '@angular/common';
+import { CabDetailsPopupComponent } from '../cab-details-popup/cab-details-popup.component';
 @Component({
   selector: 'app-cabcards',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CabDetailsPopupComponent],
   template: `
     <div class="cabcard-body">
       <div class="cabcard" [class.available]="cabCardDetails.available">
@@ -61,6 +62,12 @@ import { CommonModule } from '@angular/common';
         </div>
       </div>
     </div>
+    @if (isPopupVisible) {
+      <app-cab-details-popup 
+        [cabDetails]="cabCardDetails"
+        [onClose]="closePopup"
+      ></app-cab-details-popup>
+    }
   `,
   styleUrls: ["./cabcards.component.css"]
 })
@@ -68,9 +75,13 @@ export class CabcardsComponent {
   @Input() cabCardDetails!: CabCardDetails;
   detailsClicked = false;
   bookClicked = false;
-
+  isPopupVisible = false;
+  closePopup = () => {
+    this.isPopupVisible = false;
+  }
   onDetailsClick() {
     this.detailsClicked = true;
+    this.isPopupVisible = true;
     setTimeout(() => {
       this.detailsClicked = false;
     }, 600); // Increased to match ripple animation duration
