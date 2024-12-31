@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CabDetailsPopupComponent } from './cab-details-popup.component';
+import { CabDetailsPopupComponent } from './CabDetailsPopupComponent';
 
 describe('CabDetailsPopupComponent', () => {
   let component: CabDetailsPopupComponent;

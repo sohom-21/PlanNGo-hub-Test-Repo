@@ -13,12 +13,14 @@
 
 .popup-content {
          background: white;
-         padding: 2rem;
+         padding: 0rem;
          border-radius: 8px;
-         width: 90%;
-         max-width: 500px;
+         width: 80%;
+         max-width: 450px;
          position: relative;
          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+         background-image: url(https://www.a10.name/wp-content/uploads/2021/03/512x384-4375.jpg);
+         background-size: 450px 430px;
 }
 
 .close-btn {
@@ -31,9 +33,25 @@
          cursor: pointer;
          color: #666;
 }
+#grad{
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 0;
+    
+}
 
 .cab-info {
+         width: 360px;
          margin: 1.5rem 0;
+         margin-left: 20px;
+         display: flex;
+         
+}
+
+.half-d{
+    margin-left: 45px;
+    
+    width: 300px;
 }
 
 .cab-info p {
@@ -48,6 +66,8 @@
 }
 
 .book-btn {
+         margin-right: 1rem;
+         margin-bottom: 1rem;
          padding: 0.5rem 1.5rem;
          background-color: #4CAF50;
          color: white;
