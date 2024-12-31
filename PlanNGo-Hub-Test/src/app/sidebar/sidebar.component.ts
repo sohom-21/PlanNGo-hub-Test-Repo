@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
         <ul class="nav-links">
           <li>
             <img src="/assets/house-solid.svg" alt="">
-            <a routerLink="/" routerLinkActive="active">Cab Search</a>
+            <a routerLink="/" routerLinkActive="active" class="tc" >Search</a>
           </li>
           <li>
           <img src="/assets/clock-rotate-left-solid.svg" alt="">
@@ -20,11 +20,12 @@ import { RouterLink } from '@angular/router';
           </li>
           <li>
           <img src="/assets/comment-slash-solid.svg" alt="">
-            <a routerLink="/cancellation" routerLinkActive="active">Cab Cancellation</a>
+            <a routerLink="/cancellation" routerLinkActive="active">Cancel</a>
+<!-- cab cancelation-->
           </li>
           <li>
           <img src="/assets/car-side-solid.svg" alt="">
-            <a routerLink="/updates" routerLinkActive="active">Updates</a>
+            <a routerLink="/updates" routerLinkActive="active">Update</a>
           </li>
         </ul>
       </nav>

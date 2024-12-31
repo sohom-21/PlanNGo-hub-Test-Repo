@@ -8,9 +8,6 @@ import { Component } from '@angular/core';
   <div class="navbar-div">
      <nav class="navbar">
       <div>
-        <img class="brand-logo" src="./assets/logo.svg" alt="logo" aria-hidden="true">
-      </div>
-      <div>
         <ul>
           <li>HOME</li>
           <li>HOTEL</li>

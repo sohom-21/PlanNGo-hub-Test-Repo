@@ -2,26 +2,38 @@
          min-height: 100vh;
          height: 100%;
          min-width: 160px;
-         width: 100%;
-         background-color: #c1dcf7;
+         width: 90%;
+         background-color: #125eab; 
+         /*-- #c1dcf7 */
          color: rgb(7, 8, 8);
          padding: 20px;
+         
          display: flex;
          flex-direction: column;
          box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
          transition: width 0.3s ease-in-out;
          box-sizing: border-box;
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         background-image: url(https://wallpapercave.com/wp/wp13508502.jpg);
+         
 }
 
 .sidebar .sidebar-comp {
          text-align: center;
-         font-size: 24px;
+         font-size: 10px;
          font-weight: bold;
+         font-family: 'Times New Roman', Times, serif;
+}
+
+a{
+    color: aliceblue;
+    font-size: 10px;
 }
 
 .divider {
          height: 1px;
-         background-color: white;
+         background-color: rgb(8, 2, 31);
+         /*white*/
          margin: 2px 0;
 }
 
