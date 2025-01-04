@@ -16,9 +16,9 @@
   width: 65rem;
   max-width: 100%;
   box-sizing: border-box;
-  background-image: url(https://images.fastcompany.com/image/upload/f_webp,c_fit,w_1920,q_auto/fc/3038353-poster-p-1-how-vertical-cities-could-save-the-world.jpg) ;
-  
+  background-image: url(https://images.fastcompany.com/image/upload/f_webp,c_fit,w_1920,q_auto/fc/3038353-poster-p-1-how-vertical-cities-could-save-the-world.jpg); 
 }
+
 .searchbar:hover {
 box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
@@ -50,7 +50,7 @@ form {
   background-repeat: no-repeat;
   background-position: right 1rem center;
   color: #032142;
-  font-weight: 700;
+  font-weight: 700;  
 }
 
 .input-field:focus,

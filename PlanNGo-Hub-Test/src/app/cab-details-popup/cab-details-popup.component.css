@@ -16,7 +16,7 @@
          padding: 0rem;
          border-radius: 8px;
          width: 80%;
-         max-width: 450px;
+         max-width: 550px;
          position: relative;
          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
          background-image: url(https://www.a10.name/wp-content/uploads/2021/03/512x384-4375.jpg);
@@ -41,7 +41,7 @@
 }
 
 .cab-info {
-         width: 360px;
+         width: 500px;
          margin: 1.5rem 0;
          margin-left: 20px;
          display: flex;
@@ -50,7 +50,8 @@
 
 .half-d{
     margin-left: 45px;
-    width: 300px;
+    width: 350px;
+    height: 260px;
 }
 
 .cab-info p {
@@ -68,14 +69,15 @@
          margin-right: 1rem;
          margin-bottom: 1rem;
          padding: 0.5rem 1.5rem;
-         background-color: #4CAF50;
+         background-color: #28af2d;
          color: white;
          border: none;
          border-radius: 4px;
          cursor: pointer;
          font-size: 1rem;
+         border: 1px solid black;
 }
 
 .book-btn:hover {
-         background-color: #45a049;
+         background-color: #00f70c;
 }

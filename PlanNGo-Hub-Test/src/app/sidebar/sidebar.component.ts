@@ -12,6 +12,10 @@ import { RouterLink } from '@angular/router';
         <ul class="nav-links">
           <li>
             <img src="/assets/house-solid.svg" alt="">
+            <a routerLink="/homepage" routerLinkActive="active" class="tc" >Home</a>
+          </li>
+          <li>
+            <img src="/assets/house-solid.svg" alt="">
             <a routerLink="/" routerLinkActive="active" class="tc" >Search</a>
           </li>
           <li>
