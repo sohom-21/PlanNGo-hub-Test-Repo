@@ -7,7 +7,6 @@
          /*-- #c1dcf7 */
          color: rgb(7, 8, 8);
          padding: 20px;
-         
          display: flex;
          flex-direction: column;
          box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
@@ -15,7 +14,6 @@
          box-sizing: border-box;
          font-family: Verdana, Geneva, Tahoma, sans-serif;
          background-image: url(https://wallpapercave.com/wp/wp13508502.jpg);
-         
 }
 
 .sidebar .sidebar-comp {
@@ -33,7 +31,6 @@ a{
 .divider {
          height: 1px;
          background-color: rgb(8, 2, 31);
-         /*white*/
          margin: 2px 0;
 }
 

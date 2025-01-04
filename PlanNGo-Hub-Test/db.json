@@ -280,5 +280,21 @@
       "price": 1000,
       "available": true
     }
+  ],
+  "BookedCabList": [
+    { 
+      "id": "1",
+      "FulName": "Riya Jain Gupta",
+      "dob": "May 25, 1988 (35)",
+      "Language": "English",
+      "Rider": "R67890",
+      "Licence": "MH987654",
+      "rideType": "SUV CAB 1",
+      "pickupLocation": "Bangalore, Koramangala",
+      "dropoffLocation": "Bangalore, Whitefield",
+      "time": "10:00 AM",
+      "price": 1000,
+      "available": true
+    }
   ]
 }
