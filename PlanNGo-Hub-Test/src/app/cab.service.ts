@@ -61,7 +61,7 @@ export class CabService {
 
   async cancelBooking(cabId: string): Promise<void> {
     try {
-      // 1. Fetch the booking details from BookedCabList 
+      //  Fetch the booking details from BookedCabList 
       const response = await fetch(`${this.url2}/BookedCabList/${cabId}`);
       const bookingDetails = await response.json();
 
@@ -69,12 +69,12 @@ export class CabService {
         throw new Error('Booking not found!');
       }
       
-      // 2. Remove the booking from BookedCabList
+      //  Remove the booking from BookedCabList
       await fetch(`${this.url2}/BookedCabList/${cabId}`, {
         method: 'DELETE'
       });
 
-      // 3. Add the cab back to CabCardDetailsList with available: true
+      // Add the cab back to CabCardDetailsList with available: true
       bookingDetails.Booked = false;
       bookingDetails.available = true;
       await fetch(`${this.url2}/CabCardDetailsList`, {

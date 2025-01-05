@@ -31,3 +31,19 @@
   color: red;
 }
 
+/* ... your existing styles ... */
+
+.cab-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center horizontally */
+  gap: 20px; 
+}
+
+.no-bookings-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #888; /* Or any color you prefer */
+  margin-top: 20px; 
+}
+

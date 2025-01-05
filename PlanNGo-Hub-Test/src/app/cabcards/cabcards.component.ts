@@ -137,10 +137,11 @@ export class CabcardsComponent {
       this.isBooked = false;
       this.cabCardDetails.Booked = false;
       this.cabCardDetails.available = true;
-      // ... (handle successful cancellation, e.g., show a message) ...
+      setTimeout(() => {
+        window.location.reload(); // Reload the page
+      }, 3000);  
     } catch (error) {
       console.error('Error canceling booking:', error);
-      // ... (handle cancellation error, e.g., show an error message) ...
     } finally {
       setTimeout(() => {
         this.cancelClicked = false;
