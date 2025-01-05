@@ -101,10 +101,9 @@ export class CabcardsComponent {
 
     this.bookClicked = true;
     try {
-      // Call the booking service function
+      // Calling the booking service function
       await this.cabService.bookCab(this.cabCardDetails.id); 
-
-      // Update the button text and cab availability
+      // Updating the button text and cab availability
       this.isBooked = true;
       this.cabCardDetails.available = false; 
 
