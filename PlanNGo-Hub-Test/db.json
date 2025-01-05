@@ -12,7 +12,11 @@
       "dropoffLocation": "Bangalore, Whitefield",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 3
     },
     {
       "id": "cb_9c52",
@@ -26,7 +30,11 @@
       "dropoffLocation": "Bangalore, Whitefield",
       "time": "10:00 AM",
       "price": 700,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 4
     },
     {
       "id": "cb_79a6",
@@ -40,7 +48,11 @@
       "dropoffLocation": "Bangalore, Whitefield",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 5
     },
     {
       "id": "cb_79a6",
@@ -54,7 +66,11 @@
       "dropoffLocation": "Bangalore, Whitefield",
       "time": "10:00 PM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 2
     },
     {
       "id": "cb_1bfe",
@@ -68,7 +84,11 @@
       "dropoffLocation": "Bangalore, Whitefield",
       "time": "9:00 PM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 4
     },
     {
       "id": "cb_3307",
@@ -82,7 +102,11 @@
       "dropoffLocation": "Bangalore, Whitefield",
       "time": "12:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 5
     },
     {
       "id": "cb_513f",
@@ -96,7 +120,11 @@
       "dropoffLocation": "Bangalore, Electronic City",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 1
     },
     {
       "id": "cb_dd85",
@@ -110,7 +138,11 @@
       "dropoffLocation": "Bangalore, Jayanagar",
       "time": "10: 00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 3.5
     },
     {
       "id": "cb_613b",
@@ -124,7 +156,11 @@
       "dropoffLocation": "Gurugram, Sohna Road",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 2
     },
     {
       "id": "cb_613b",
@@ -138,7 +174,11 @@
       "dropoffLocation": "Gurugram, Sohna Road",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 4
     },
     {
       "id": "cb_613b",
@@ -152,7 +192,11 @@
       "dropoffLocation": "Gurugram, Sohna Road",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 4
     },
     {
       "id": "cb_4e3f",
@@ -166,7 +210,11 @@
       "dropoffLocation": "Gurugram, Golf Course Road",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 4
     },
     {
       "id": "cb_f5b1",
@@ -180,7 +228,11 @@
       "dropoffLocation": "Gurugram, Udyog Vihar",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 5
     },
     {
       "id": "cb_d3ca",
@@ -194,7 +246,11 @@
       "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 5
     },
     {
       "id": "cb_fb22",
@@ -208,7 +264,11 @@
       "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
       "time": "1:00 PM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 5
     },
     {
       "id": "cb_8d80",
@@ -222,7 +282,11 @@
       "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
       "time": "11:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 5
     },
     {
       "id": "cb_6869c",
@@ -236,7 +300,11 @@
       "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
       "time": "12:00 PM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 5
     },
     {
       "id": "cb_4c80",
@@ -250,7 +318,11 @@
       "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
       "time": "7:00 PM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 5
     },
     {
       "id": "cb_34d9",
@@ -264,7 +336,11 @@
       "dropoffLocation": "Andhra Pradesh, Guntur",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 3
     },
     {
       "id": "cb_eadd",
@@ -278,7 +354,11 @@
       "dropoffLocation": "Andhra Pradesh, Rajahmundry",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 4
     }
   ],
   "BookedCabList": [
@@ -294,7 +374,11 @@
       "dropoffLocation": "Bangalore, Whitefield",
       "time": "10:00 AM",
       "price": 1000,
-      "available": true
+      "available": true,
+      "Booked": false,
+      "Cancelled": false,
+      "Completed": false,
+      "Rating": 2
     }
   ]
 }

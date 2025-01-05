@@ -11,4 +11,8 @@ export interface CabCardDetails {
     time: string;
     price: number;
     available: boolean;
+    Booked: boolean;
+    Cancelled: boolean;
+    Completed: boolean;
+    Rating: number;
 }
