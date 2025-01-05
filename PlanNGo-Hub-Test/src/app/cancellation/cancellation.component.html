@@ -1,1 +1,19 @@
-<p>cancellation works!</p>
+<div class="cancellation-container">
+         <h2>Cancellation</h2>
+       
+         <div *ngIf="!isCancelled" class="cancellation-form">
+           <label for="bookingId">Enter your Booking ID:</label>
+           <input type="text" id="bookingId" [(ngModel)]="bookingId">
+       
+           <button class="cancel-button" (click)="cancelBooking()">Cancel Booking</button>
+         </div>
+       
+         <div *ngIf="isCancelled" class="confirmation-message">
+           <p>Your booking with ID {{ bookingId }} has been cancelled.</p>
+         </div>
+       
+         <div *ngIf="cancellationError" class="error-message">
+           <p>{{ cancellationError }}</p>
+         </div>
+</div>
+       

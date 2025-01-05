@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CabCardDetails } from './cabcard-details';
 import { CommonModule } from '@angular/common';
 import { CabDetailsPopupComponent } from '../cab-details-popup/CabDetailsPopupComponent';
+import { CabService } from '../cab.service';
 @Component({
   selector: 'app-cabcards',
   standalone: true,
@@ -13,6 +14,7 @@ import { CabDetailsPopupComponent } from '../cab-details-popup/CabDetailsPopupCo
           <div class="ride-type">
             <i class="fas fa-car"></i>
             <h3>{{cabCardDetails.rideType}}</h3>
+           <h3>{{cabCardDetails.id | slice:-2 }}</h3>
           </div>
           <div class="availability-badge" [class.not-available]="!cabCardDetails.available">
           <i class="fas fa-check-circle fa-fade" *ngIf="cabCardDetails.available"></i>
@@ -56,8 +58,11 @@ import { CabDetailsPopupComponent } from '../cab-details-popup/CabDetailsPopupCo
           <button class="card-buttons"
            (click)="onBookClick()"
            [class.animate]="bookClicked"
+           [disabled]="isBooked"
            >
-            <i class="fas fa-check-circle"></i> Book Now
+           <div *ngIf="!isBooked">Book Now</div>
+           <div *ngIf="isBooked">Booked</div>
+            <!-- <i class="fas fa-check-circle"></i> Book Now-->
           </button>
         </div>
       </div>
@@ -76,6 +81,10 @@ export class CabcardsComponent {
   detailsClicked = false;
   bookClicked = false;
   isPopupVisible = false;
+
+  constructor(private cabService: CabService) {} 
+  isBooked = false; // To change the button text and booking status
+
   closePopup = () => {
     this.isPopupVisible = false;
   }
@@ -87,10 +96,26 @@ export class CabcardsComponent {
     }, 600); // Increased to match ripple animation duration
   }
 
-  onBookClick() {
+  async onBookClick() {
+    if (this.isBooked) return;
+
     this.bookClicked = true;
-    setTimeout(() => {
-      this.bookClicked = false;
-    }, 600); // Increased to match ripple animation duration
-  }
+    try {
+      // Call the booking service function
+      await this.cabService.bookCab(this.cabCardDetails.id); 
+
+      // Update the button text and cab availability
+      this.isBooked = true;
+      this.cabCardDetails.available = false; 
+
+    } catch (error) {
+      console.error('Error booking cab:', error);
+      // Handle the error gracefully, maybe show an error message to the user
+    } finally {
+      // Reset animation 
+      setTimeout(() => {
+        this.bookClicked = false;
+      }, 600); 
+    }
+  }  
 }
