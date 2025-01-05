@@ -35,6 +35,10 @@
         gap: 0.5rem;
 }
 
+.ride-type h3 {
+        text-transform: uppercase;
+}
+
 .availability-badge {
         display: inline-flex;
         align-items: center;

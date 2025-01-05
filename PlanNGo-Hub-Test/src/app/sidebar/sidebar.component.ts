@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
               <a routerLink="/" routerLinkActive="active" class="tc" >Home</a>
             </li>
             <li>
-              <img src="/assets/house-solid.svg" alt="">
+              <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
               <a routerLink="/search" routerLinkActive="active" class="tc" >Search</a>
             </li>
             <li>

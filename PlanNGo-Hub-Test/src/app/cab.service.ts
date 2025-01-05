@@ -52,12 +52,5 @@ export class CabService {
       throw error; // Re-throw the errors to be handled in the component
     }
   }
-  async cancelBooking(bookingId: string): Promise<void> {
-    // Implement the logic to cancel a booking based on bookingId
-    // This might involve:
-    // 1. Fetching the booking details from BookedCabList
-    // 2. Removing the booking from BookedCabList
-    // 3. Optionally, adding the cab back to CabCardDetailsList with available: true
-    // 4. Making necessary API calls to your backend
-  }
+  async cancelBooking(bookingId: string): Promise<void> {}
 }
