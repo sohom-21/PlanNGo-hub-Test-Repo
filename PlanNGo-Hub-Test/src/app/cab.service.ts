@@ -32,13 +32,14 @@ export class CabService {
       if (!cabDetails) {
         throw new Error('Cab not found!');
       }
-
+     
       // Removes the cab which i have booked from CabCardDetailsList
       await fetch(`${this.url2}/CabCardDetailsList/${cabId}`, {
         method: 'DELETE'
       });
 
       // This will Add the cab to BookedCabList
+      cabDetails.Booked = true;
       cabDetails.available = false; // Set cab as unavailable
       await fetch(`${this.url2}/BookedCabList`, {
         method: 'POST',
@@ -52,5 +53,40 @@ export class CabService {
       throw error; // Re-throw the errors to be handled in the component
     }
   }
-  async cancelBooking(bookingId: string): Promise<void> {}
+  
+  async getBookedCabs(): Promise<CabCardDetails[]> {
+    const response = await fetch(`${this.url2}/BookedCabList`);
+    return await response.json();
+  }
+
+  async cancelBooking(cabId: string): Promise<void> {
+    try {
+      // 1. Fetch the booking details from BookedCabList 
+      const response = await fetch(`${this.url2}/BookedCabList/${cabId}`);
+      const bookingDetails = await response.json();
+
+      if (!bookingDetails) {
+        throw new Error('Booking not found!');
+      }
+      
+      // 2. Remove the booking from BookedCabList
+      await fetch(`${this.url2}/BookedCabList/${cabId}`, {
+        method: 'DELETE'
+      });
+
+      // 3. Add the cab back to CabCardDetailsList with available: true
+      bookingDetails.Booked = false;
+      bookingDetails.available = true;
+      await fetch(`${this.url2}/CabCardDetailsList`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bookingDetails)
+      }); 
+    } catch (error) {
+      console.error('Error cancelling booking:', error);
+      throw error; 
+    }    
+  }
 }

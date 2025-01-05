@@ -13,12 +13,18 @@ import { CabService } from '../cab.service';
         <div class="cabcard-header">
           <div class="ride-type">
             <i class="fas fa-car"></i>
-            <h3>{{cabCardDetails.rideType}}</h3>
-           <h3>{{cabCardDetails.id | slice:-2 }}</h3>
+            <h3>{{ cabCardDetails.rideType }}</h3>
+            <h3>{{ cabCardDetails.id | slice : -2 }}</h3>
           </div>
-          <div class="availability-badge" [class.not-available]="!cabCardDetails.available">
-          <i class="fas fa-check-circle fa-fade" *ngIf="cabCardDetails.available"></i>
-            {{cabCardDetails.available ? 'Available' : 'Not Available'}}
+          <div
+            class="availability-badge"
+            [class.not-available]="!cabCardDetails.available"
+          >
+            <i
+              class="fas fa-check-circle fa-fade"
+              *ngIf="cabCardDetails.available"
+            ></i>
+            {{ cabCardDetails.available ? 'Available' : 'Not Available' }}
           </div>
         </div>
         <div class="cabcard-content">
@@ -26,68 +32,76 @@ import { CabService } from '../cab.service';
             <i class="fas fa-map-marker-alt"></i>
             <div>
               <small>Pickup</small>
-              <p>{{cabCardDetails.pickupLocation}}</p>
+              <p>{{ cabCardDetails.pickupLocation }}</p>
             </div>
           </div>
           <div class="location">
             <i class="fas fa-flag-checkered"></i>
             <div>
               <small>Dropoff</small>
-              <p>{{cabCardDetails.dropoffLocation}}</p>
+              <p>{{ cabCardDetails.dropoffLocation }}</p>
             </div>
           </div>
           <div class="details">
             <div class="time">
               <i class="fas fa-clock"></i>
-              <p>Time: {{cabCardDetails.time}}</p>
+              <p>Time: {{ cabCardDetails.time }}</p>
             </div>
             <div class="price">
               <i class="fas fa-tag"></i>
-              <p>Price: ₹{{cabCardDetails.price}}</p>
+              <p>Price: ₹{{ cabCardDetails.price }}</p>
             </div>
           </div>
         </div>
         <div class="cabcard-footer">
-          <button 
-          class="card-buttons"
-           (click)="onDetailsClick()"
-           [class.animate]="detailsClicked"
-           >
+          <button
+            class="card-buttons"
+            (click)="onDetailsClick()"
+            [class.animate]="detailsClicked"
+          >
             <i class="fas fa-info-circle"></i> Details
           </button>
-          <button class="card-buttons"
-           (click)="onBookClick()"
-           [class.animate]="bookClicked"
-           [disabled]="isBooked"
-           >
-           <div *ngIf="!isBooked">Book Now</div>
-           <div *ngIf="isBooked">Booked</div>
+          <button
+            class="card-buttons"
+            (click)="onBookClick()"
+            [class.animate]="bookClicked"
+            [disabled]="cabCardDetails.Booked"
+            >
+            <div *ngIf="!cabCardDetails.Booked">Book Now</div>
+            <div *ngIf="cabCardDetails.Booked">Booked</div>
             <!-- <i class="fas fa-check-circle"></i> Book Now-->
+          </button>
+          <button class="card-buttons-cancel" 
+                  *ngIf="cabCardDetails.Booked"
+                  (click)="onCancelBooking()"
+                  [class.animate]="cancelClicked"
+                  >
+            Cancel
           </button>
         </div>
       </div>
     </div>
     @if (isPopupVisible) {
-      <app-cab-details-popup 
-        [cabDetails]="cabCardDetails"
-        [onClose]="closePopup"
-      ></app-cab-details-popup>
+    <app-cab-details-popup
+      [cabDetails]="cabCardDetails"
+      [onClose]="closePopup"
+    ></app-cab-details-popup>
     }
   `,
-  styleUrls: ["./cabcards.component.css"]
+  styleUrls: ['./cabcards.component.css'],
 })
 export class CabcardsComponent {
   @Input() cabCardDetails!: CabCardDetails;
   detailsClicked = false;
   bookClicked = false;
   isPopupVisible = false;
+  cancelClicked = false; 
 
-  constructor(private cabService: CabService) {} 
+  constructor(private cabService: CabService) {}
   isBooked = false; // To change the button text and booking status
-
   closePopup = () => {
     this.isPopupVisible = false;
-  }
+  };
   onDetailsClick() {
     this.detailsClicked = true;
     this.isPopupVisible = true;
@@ -102,19 +116,35 @@ export class CabcardsComponent {
     this.bookClicked = true;
     try {
       // Calling the booking service function
-      await this.cabService.bookCab(this.cabCardDetails.id); 
+      await this.cabService.bookCab(this.cabCardDetails.id);
       // Updating the button text and cab availability
       this.isBooked = true;
-      this.cabCardDetails.available = false; 
-
+      this.cabCardDetails.available = false;
     } catch (error) {
       console.error('Error booking cab:', error);
       // Handle the error gracefully, maybe show an error message to the user
     } finally {
-      // Reset animation 
+      // Reset animation
       setTimeout(() => {
         this.bookClicked = false;
-      }, 600); 
+      }, 600);
     }
-  }  
+  }
+  async onCancelBooking() {
+    this.cancelClicked = true; // Trigger Cancel button animation
+    try {
+      await this.cabService.cancelBooking(this.cabCardDetails.id);
+      this.isBooked = false;
+      this.cabCardDetails.Booked = false;
+      this.cabCardDetails.available = true;
+      // ... (handle successful cancellation, e.g., show a message) ...
+    } catch (error) {
+      console.error('Error canceling booking:', error);
+      // ... (handle cancellation error, e.g., show an error message) ...
+    } finally {
+      setTimeout(() => {
+        this.cancelClicked = false;
+      }, 600);
+    }
+  }
 }

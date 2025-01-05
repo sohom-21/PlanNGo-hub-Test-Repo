@@ -1,8 +1,11 @@
 <div class="cancellation-container">
   <h2>Cancel Booking</h2>
-  <app-cabcards *ngIf="cabCardDetails" [cabCardDetails]="cabCardDetails"></app-cabcards>
-  <button class="cancel-button" (click)="cancelBooking()">Cancel Booking</button>
   <div *ngIf="cancellationError" class="error-message">{{ cancellationError }}</div>
   <div *ngIf="isCancelled" class="confirmation-message">Your booking has been cancelled.</div>
+  
+  <div *ngFor="let cab of bookedCabs">
+    <app-cabcards [cabCardDetails]="cab">
+      <button class="cancel-button" (click)="cancelBooking(cab.id)">Cancel Booking</button>
+    </app-cabcards>
+  </div>
 </div>
-       

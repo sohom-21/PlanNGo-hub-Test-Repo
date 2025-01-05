@@ -126,7 +126,11 @@ button:hover {
 }
 
 /* Book Now button styling */
-.card-buttons:last-child {
+.card-buttons:nth-last-child(2) {
+        background: #007bff;
+        color: white;
+}
+.card-buttons:last-child{
         background: #007bff;
         color: white;
 }
@@ -161,6 +165,10 @@ button:hover {
         animation: ripple 0.6s ease-out;
 }
 
+.card-buttons-cancel{
+        background: #dc3545;
+        color: white;
+}
 /*  click animation */
 @keyframes buttonClick {
         0% {

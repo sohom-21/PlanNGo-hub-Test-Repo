@@ -11,30 +11,30 @@ import { CabcardsComponent } from '../cabcards/cabcards.component';
   styleUrls: ['./cancellation.component.css']
 })
 export class CancellationComponent {
-  cabCardDetails: CabCardDetails | undefined;
+  bookedCabs: CabCardDetails[] = [];
+  cancellationError: string = ''; 
   isCancelled: boolean = false;
-  cancellationError: string = '';
 
   constructor(private cabService: CabService) {
-    this.loadCabDetails();
+    this.loadBookedCabs();
   }
 
-  async loadCabDetails() {
+  async loadBookedCabs() {
     try {
-      // Fetch the cab details you want to display
-      this.cabCardDetails = await this.cabService.getCabDetailsById('your-cab-id');
+      this.bookedCabs = await this.cabService.getBookedCabs();
     } catch (error) {
-      console.error('Error loading cab details:', error);
+      console.error('Error loading booked cabs:', error);
+      this.cancellationError = 'An error occurred while fetching booked cabs.';
     }
   }
-
-  async cancelBooking() {
+  
+  async cancelBooking(cabId: string) {
     try {
-      if (this.cabCardDetails) {
-        await this.cabService.cancelBooking(this.cabCardDetails.id);
-        this.isCancelled = true;
-        this.cancellationError = '';
-      }
+      await this.cabService.cancelBooking(cabId);
+      // Update the bookedCabs array after successful cancellation
+      this.bookedCabs = this.bookedCabs.filter(cab => cab.id !== cabId); 
+      this.isCancelled = true;
+      this.cancellationError = ''; // Clear any previous errors
     } catch (error) {
       console.error('Error cancelling booking:', error);
       this.cancellationError = 'An error occurred while cancelling the booking.';
