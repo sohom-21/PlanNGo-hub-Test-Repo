@@ -7,6 +7,7 @@ import {HomepageComponent} from './homepage/homepage.component'
 
 export const routes: Routes = [
   { path: 'search', component: CabComponent },
+  { path: 'cab', component: CabComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'updates', component: UpdatesComponent },
   { path: 'cancellation', component: CancellationComponent },
