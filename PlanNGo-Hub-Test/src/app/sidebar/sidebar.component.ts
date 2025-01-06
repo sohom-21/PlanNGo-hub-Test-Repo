@@ -11,20 +11,20 @@ import { RouterLink } from '@angular/router';
       <nav>
         <ul class="nav-links">
           <li>
-            <img src="/assets/house-solid.svg" alt="">
+            <img src="/assets/house-solid.png" alt="">
             <a routerLink="/" routerLinkActive="active" class="tc" >Search</a>
           </li>
           <li>
-          <img src="/assets/clock-rotate-left-solid.svg" alt="">
+          <img src="/assets/clock-rotate-left-solid.png" alt="">
             <a  routerLink="/history" routerLinkActive="active">History</a>
           </li>
           <li>
-          <img src="/assets/comment-slash-solid.svg" alt="">
+          <img src="/assets/comment-slash-solidpng.png" alt="">
             <a routerLink="/cancellation" routerLinkActive="active">Cancel</a>
 <!-- cab cancelation-->
           </li>
           <li>
-          <img src="/assets/car-side-solid.svg" alt="">
+          <img src="/assets/car-side-solid1.png" alt="">
             <a routerLink="/updates" routerLinkActive="active">Update</a>
           </li>
         </ul>
@@ -33,13 +33,13 @@ import { RouterLink } from '@angular/router';
       <nav>
         <ul class="nav-links">
           <li>
-            <img src="/assets/gear-solid.svg" alt="">
+            <img src="/assets/gear-solid.png" alt="">
             <a href="#">settings</a>
           </li>
         </ul>
         <ul class="nav-links">
           <li>
-            <img src="/assets/helicopter-symbol-solid.svg" alt="">
+            <img src="/assets/helicopter-symbol-solid.png" alt="">
             <a href="#">Help Center</a>
           </li>
         </ul>
