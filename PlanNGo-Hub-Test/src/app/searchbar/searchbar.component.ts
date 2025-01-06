@@ -35,9 +35,7 @@ import { Component, Output,EventEmitter } from '@angular/core';
           <option value="" disabled selected>Dropoff Location</option>
           <option value="Andhra Pradesh, Guntur">Andhra Pradesh, Guntur</option>
           <option value="Andhra Pradesh, Rajahmundry">Andhra Pradesh, Rajahmundry</option>
-          <option value="Andhra Pradesh, Visakhapatnam
-          ">Location Andhra Pradesh, Visakhapatnam
-        </option>
+          <option value="Andhra Pradesh, Visakhapatnam"> Andhra Pradesh, Visakhapatnam</option>
         <option value="Bangalore, Electronic City">Bangalore, Electronic City</option>
         <option value="Bangalore, Jayanagar">Bangalore, Jayanagar</option>
         <option value="Bangalore, Whitefield">Bangalore, Whitefield</option>
