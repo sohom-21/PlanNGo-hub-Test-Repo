@@ -7,6 +7,8 @@ import { RouterLink } from '@angular/router';
   template: `
  <aside class="sidebar">
       <div class="sidebar-comp">
+
+
         <nav>
           <ul class="nav-links">
             <li>
@@ -48,6 +50,7 @@ import { RouterLink } from '@angular/router';
             </ul>
           </nav>
         </div>
+
     </aside>
   `,
   styleUrl: './sidebar.component.css'
