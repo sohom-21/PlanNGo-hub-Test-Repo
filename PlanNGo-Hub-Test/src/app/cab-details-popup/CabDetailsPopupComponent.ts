@@ -19,12 +19,16 @@ import { CabCardDetails } from '../cabcards/cabcard-details';
             <p><strong>Driver name</strong> {{cabDetails().FulName}}</p>
             <p><strong>Date of birth</strong> {{cabDetails().dob}}</p>
             <p><strong>Languages</strong> {{cabDetails().Language}}</p>
+            <p><strong>Rating:</strong> 
+              <span *ngFor="let _ of [].constructor(cabDetails().Rating); let i = index">
+                <i class="fas fa-star" style="color:rgb(119, 76, 250);" [class.filled]="i < cabDetails().Rating"></i>
+              </span>
+            </p>
             </div>
-          
           <div class="half-d">
             <p><strong>Rider No.</strong> {{cabDetails().Rider}}</p>
             <p><strong>Licence No.</strong> {{cabDetails().Licence}}</p>
-            <p><strong>Rating </strong>* * * * *</p>
+            <p><strong>Ride ID</strong> {{cabDetails().id}}</p>
             <!--<p><strong>Time:</strong> {{cabDetails().time}}</p>
             <p><strong>Price:</strong> ₹{{cabDetails().price}}</p>
             <p><strong>Status:</strong> {{cabDetails().available ? 'Available' : 'Not Available'}}</p>-->

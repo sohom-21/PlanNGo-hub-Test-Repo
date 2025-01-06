@@ -1,4 +1,5 @@
 .sidebar {
+
   position: relative; /* Make the element a containing block for the pseudo-element */
   min-height: 100vh;
   height: 100%;
@@ -25,7 +26,7 @@
   background-image: url(https://wallpapercave.com/wp/wp13508502.jpg);
   background-size: cover;
   background-position: center;
-  filter: blur(8px); /* Apply blur to the background image */
+  filter: blur(5px); /* Apply blur to the background image */
   z-index: -1; /* Place the background image behind the content */
 }
 
@@ -45,7 +46,6 @@ a{
 .divider {
          height: 1px;
          background-color: rgb(8, 2, 31);
-         /*white*/
          margin: 2px 0;
 }
 
