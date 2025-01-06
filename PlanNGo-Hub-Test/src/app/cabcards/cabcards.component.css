@@ -75,7 +75,7 @@
         justify-content: space-between;
         margin-top: 1.5rem;
         padding-top: 1.5rem;
-        border-top: 1px solid #e9ecef;
+        border-top: 1px solid #c3c6c9;
 }
 
 .cabcard-footer {
@@ -95,16 +95,19 @@ button {
 }
 
 .details-btn {
-        background: #e9ecef;
+        background: #b3b5b8;
         color: #495057;
 }
+
 
 .book-btn {
         background: #16314e;
         color: white;
 }
 
+
 button:hover {
+        
         transform: translateY(-2px);
 }
 
@@ -213,9 +216,9 @@ button:hover {
 
 /* Specific hover effects for each button */
 .card-buttons:first-child:hover {
-        background: #dee2e6;
+        background: #d6d7d8;
 }
 
 .card-buttons:last-child:hover {
-        background: #0056b3;
+        background:  #0dd1f4;
 }

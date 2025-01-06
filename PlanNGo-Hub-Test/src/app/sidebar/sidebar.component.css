@@ -1,5 +1,6 @@
 .sidebar {
 
+
   position: relative; /* Make the element a containing block for the pseudo-element */
   min-height: 100vh;
   height: 100%;
@@ -15,6 +16,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   z-index: 1; /* Ensure text is above the background image */
 }
+
 
 .sidebar::before {
   content: "";

@@ -1,6 +1,6 @@
 export interface CabCardDetails {
     id: string;
-    FulName: string;
+    FullName: string;
     dob: string;
     Language: string;
     Rider: string;

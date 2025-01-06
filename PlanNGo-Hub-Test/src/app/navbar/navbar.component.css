@@ -5,7 +5,7 @@
 }
 
 .navbar-div {
-    background-color: #125eab;
+    background-color:  rgb(29, 20, 44);;
     width: 100vw;
     box-sizing: border-box;
 }
@@ -36,7 +36,7 @@
     border-radius: 5px;
     box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
     font-size: 15px;
-    background-color: #3182d2;
+    background-color:  rgb(41, 28, 62);;
 }
 
 .navbar ul li:nth-child(4) {

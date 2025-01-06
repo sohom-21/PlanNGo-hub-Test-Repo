@@ -1,3 +1,4 @@
+
 .popup-overlay {
          position: fixed;
          top: 0;
@@ -12,6 +13,7 @@
 }
 
 .popup-content {
+
     background: white;
     padding: 0rem;
     border-radius: 8px;
@@ -52,6 +54,7 @@
     to {
         transform: translateY(0);
     }
+
 }
 
 .close-btn {
@@ -95,16 +98,19 @@
 }
 
 .cab-info {
-    width: 360px;
-    margin: 1.5rem 0;
-    margin-left: 20px;
-    display: flex;
+
+         width: 500px;
+         margin: 1.5rem 0;
+         margin-left: 20px;
+         display: flex;
+         
 
 }
 
 .half-d {
     margin-left: 45px;
-    width: 300px;
+    width: 350px;
+    height: 260px;
 }
 
 @keyframes textAppear {
@@ -130,7 +136,7 @@
          margin-top: 1.5rem;
 }
 
-.book-btn {
+
      margin-right: 1rem;
     margin-bottom: 1rem;
     padding: 0.5rem 1.5rem;
@@ -178,3 +184,4 @@
 .book-btn:hover {
     background-color: #45a049;
 }
+
