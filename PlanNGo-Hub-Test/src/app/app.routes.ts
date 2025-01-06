@@ -6,7 +6,6 @@ import { HomeComponent } from './home/home.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
 
 export const routes: Routes = [
-  { path: '', component:HomeComponent },
   { path: 'search', component: CabComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'updates', component: UpdatesComponent },
