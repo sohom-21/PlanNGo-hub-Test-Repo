@@ -16,7 +16,7 @@ import { CabCardDetails } from '../cabcards/cabcard-details';
         </div>
         <div class="cab-info">
           <div class="half-d">
-            <p><strong>Driver name</strong> {{cabDetails().FulName}}</p>
+            <p><strong>Driver name</strong> {{cabDetails().FullName}}</p>
             <p><strong>Date of birth</strong> {{cabDetails().dob}}</p>
             <p><strong>Languages</strong> {{cabDetails().Language}}</p>
             </div>
@@ -24,7 +24,11 @@ import { CabCardDetails } from '../cabcards/cabcard-details';
           <div class="half-d">
             <p><strong>Rider No.</strong> {{cabDetails().Rider}}</p>
             <p><strong>Licence No.</strong> {{cabDetails().Licence}}</p>
-            <p><strong>Rating </strong>* * * * *</p>
+            <p><strong>Rating :</strong><span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span></p>
             <!--<p><strong>Time:</strong> {{cabDetails().time}}</p>
             <p><strong>Price:</strong> ₹{{cabDetails().price}}</p>
             <p><strong>Status:</strong> {{cabDetails().available ? 'Available' : 'Not Available'}}</p>-->

@@ -229,7 +229,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: url(https://img.freepik.com/free-photo/collage-customer-experience-concept_23-2149367139.jpg?t=st=1736018064~exp=1736021664~hmac=bf4fc5ee9b2b6f961a9b8eb4add39f1740ef1972bfd7f0e4200c4f30daea0185&w=900);
+      background-image: url(https://img.freepik.com/free-photo/blurred-city-street_23-2147786060.jpg?t=st=1736156701~exp=1736160301~hmac=5cb5ebba3f5545796365d2272726926edc48ba335d097da2c83c63ebb3ace028&w=900);
       background-size: cover;
   }
   .innerdiv
@@ -395,4 +395,7 @@
       position: relative;
     }
   }
-  
+  .box-rev{
+    text-align: center;
+    color: cornsilk;
+  }
