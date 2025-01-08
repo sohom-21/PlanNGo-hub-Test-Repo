@@ -16,7 +16,7 @@ import { RouterLink } from '@angular/router';
               <a routerLink="/" routerLinkActive="active" class="tc" >Home</a>
             </li>
             <li>
-              <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+              <i class="fa-solid fa-magnifying-glass" style="color: #ffffff; font-size: 20px;"></i>
               <a routerLink="/search" routerLinkActive="active" class="tc" >Search</a>
             </li>
             <li>
@@ -45,7 +45,7 @@ import { RouterLink } from '@angular/router';
             <ul class="nav-links">
               <li>
                 <img src="/assets/helicopter-symbol-solid.svg" alt="">
-                <a href="#">Help Center</a>
+                <a href="#">Help</a>
               </li>
             </ul>
           </nav>
