@@ -45,7 +45,7 @@ import { RouterLink } from '@angular/router';
             <ul class="nav-links">
               <li>
                 <img src="/assets/helicopter-symbol-solid.svg" alt="">
-                <a href="#">Help Center</a>
+                <a href="#">Help</a>
               </li>
             </ul>
           </nav>
