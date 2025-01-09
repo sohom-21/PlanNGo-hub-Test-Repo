@@ -4,10 +4,11 @@ import { CabCardDetails } from '../cabcards/cabcard-details';
 import { CommonModule } from '@angular/common';
 import { CabcardsComponent } from '../cabcards/cabcards.component';
 
+
 @Component({
   selector: 'app-cancellation',
   standalone: true,
-  imports: [CommonModule, CabcardsComponent],
+  imports: [CommonModule, CabcardsComponent] ,
   templateUrl: './cancellation.component.html',
   styleUrls: ['./cancellation.component.css']
 })

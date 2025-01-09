@@ -57,7 +57,7 @@
 .not-available {
         opacity: 0.7;
         background: #afb0b1;
-        color:#000000
+        color:#dd5454
 }
 
 .cabcard-content {
@@ -222,3 +222,4 @@ button:hover {
 .card-buttons:last-child:hover {
         background:  #0dd1f4;
 }
+
