@@ -3,18 +3,22 @@
   top: 6rem;
   left: 50%;
   transform: translateX(-49%); */
+
   display: flex;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
   padding: 20px 10px;
-  background-color: #c1dcf7;
+  background-color: #80c0ff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   margin: 1rem auto;
   width: 65rem;
   max-width: 100%;
   box-sizing: border-box;
+  background-image: url(https://images.fastcompany.com/image/upload/f_webp,c_fit,w_1920,q_auto/fc/3038353-poster-p-1-how-vertical-cities-could-save-the-world.jpg); 
 }
+
 .searchbar:hover {
 box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
@@ -25,24 +29,28 @@ form {
   width: 100%;
   max-width: 800px;
   flex-wrap: wrap;
+  margin-left: 20px;
 }
 
 .input-field,
 .select-field {
   flex: 1;
   padding: 10px;
-  font-size: 16px;
+  margin: 10px;
+  font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 15px;
+  border-radius: 6px;
   outline: none;
   min-width: 120px;
-  margin: auto;
+  text-align: center;
   cursor: pointer;
   appearance: none;
   transform: all 0.4 ease-in-out;
   background-image: url("data:image/svg+xml,...");
   background-repeat: no-repeat;
   background-position: right 1rem center;
+  color: #032142;
+  font-weight: 700;  
 }
 
 .input-field:focus,
@@ -54,8 +62,14 @@ border-color: #007bff;
 }
 
 .search-btn {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 40px;
+  
+  margin-top: 10px;
+  font-size: 17px;
   color: white;
   background-color: #007bff;
   border: none;
