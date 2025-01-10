@@ -110,8 +110,8 @@
          background-image: url(https://img.freepik.com/free-photo/taxi-sign-night_181624-25843.jpg?t=st=1735995505~exp=1735999105~hmac=3e4e82e4fdb27146b7a3c10a2943fb53e8f90993c45378d6b67231d237e4b409&w=900);
          background-size: contain;
 
-         @media screen and (min-width: 992px) and (max-width: 1439px) {
-                  max-width: 1279px !important;
+         @media screen and (min-width: 992px) and (max-width: 2500px) {
+                  max-width: 2500px !important;
                   padding: 0 !important;
                   margin: 0px !important;
                   width: auto !important;

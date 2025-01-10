@@ -1,24 +1,6 @@
 {
   "CabCardDetailsList": [
     {
-      "id": "cb_f0b1",
-      "FulName": "Riya Jain Gupta",
-      "dob": "May 25, 1988 (35)",
-      "Language": "English",
-      "Rider": "R67890",
-      "Licence": "MH987654",
-      "rideType": "SUV CAB",
-      "pickupLocation": "Bangalore, Koramangala",
-      "dropoffLocation": "Bangalore, Whitefield",
-      "time": "10:00 AM",
-      "price": 1000,
-      "available": true,
-      "Booked": false,
-      "Cancelled": true,
-      "Completed": false,
-      "Rating": 3
-    },
-    {
       "id": "cb_9c52",
       "FulName": "Priya Jain Gupta",
       "dob": "May 25, 1988 (35)",
@@ -127,6 +109,7 @@
       "Rating": 1
     },
     {
+
       "id": "cb_dd85",
       "FullName": "Rohan Kumar Sharma",
       "dob": "August 12, 1992 (31)",
@@ -361,6 +344,42 @@
       "Rating": 4
     },
     {
+      "id": "cb_3307",
+      "FulName": "Vikas verma",
+      "dob": "November 2, 1982 (41)",
+      "Language": "Punjabi",
+      "Rider": "R67890",
+      "Licence": "PB987654",
+      "rideType": "SUV CAB",
+      "pickupLocation": "Bangalore, Koramangala",
+      "dropoffLocation": "Bangalore, Whitefield",
+      "time": "12:00 AM",
+      "price": 1000,
+      "available": true,
+      "Booked": false,
+      "Cancelled": true,
+      "Completed": false,
+      "Rating": 5
+    },
+    {
+      "id": "cb_513f",
+      "FullName": "Preeti Gupta Agarwal",
+      "dob": "July 15, 1989 (34)",
+      "Language": "Hindi",
+      "Rider": "R34567",
+      "Licence": "DL456789",
+      "rideType": "SUV CAB",
+      "pickupLocation": "Bangalore, Indiranagar",
+      "dropoffLocation": "Bangalore, Electronic City",
+      "time": "10:00 AM",
+      "price": 1000,
+      "available": true,
+      "Booked": false,
+      "Cancelled": true,
+      "Completed": false,
+      "Rating": 1
+    },
+    {
       "id": "cb_1",
       "FulName": "Riya Jain Gupta",
       "dob": "May 25, 1988 (35)",
@@ -379,7 +398,7 @@
       "Rating": 2
     },
     {
-      "id": "cb_1",
+      "id": "cb_f0b1",
       "FulName": "Riya Jain Gupta",
       "dob": "May 25, 1988 (35)",
       "Language": "English",
@@ -392,9 +411,9 @@
       "price": 1000,
       "available": true,
       "Booked": false,
-      "Cancelled": false,
+      "Cancelled": true,
       "Completed": false,
-      "Rating": 4
+      "Rating": 3
     }
   ],
   "BookedCabList": [

@@ -1,6 +1,6 @@
 .sidebar {
 
-
+  
   position: relative; /* Make the element a containing block for the pseudo-element */
   min-height: 100vh;
   height: 100%;
