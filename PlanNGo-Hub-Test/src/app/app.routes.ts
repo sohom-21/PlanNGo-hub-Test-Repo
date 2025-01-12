@@ -1,10 +1,9 @@
 import { Routes } from '@angular/router';
-import { CabComponent } from './cab/cab.component';
-import { HistoryComponent } from './history/history.component';
-import { UpdatesComponent } from './updates/updates.component';
-import { CancellationComponent } from './cancellation/cancellation.component';
-
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageComponent } from './cab/Components/homepage/homepage.component';
+import { CabComponent } from './cab/Components/cab/cab.component';
+import { HistoryComponent } from './cab/Components/history/history.component';
+import { UpdatesComponent } from './cab/Components/updates/updates.component';
+import { CancellationComponent } from './cab/Components/cancellation/cancellation.component';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CabService } from '../cab.service';
-import { CabCardDetails } from '../cabcards/cabcard-details';
+import { CabService } from '../../services/cab.service';
+import { CabCardDetails } from '../../model/cabcard-details';
 import { CommonModule } from '@angular/common';
 import { CabcardsComponent } from '../cabcards/cabcards.component';
 import { RouterLink } from '@angular/router';
