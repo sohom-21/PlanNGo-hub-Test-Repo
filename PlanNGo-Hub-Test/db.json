@@ -109,7 +109,6 @@
       "Rating": 1
     },
     {
-
       "id": "cb_dd85",
       "FullName": "Rohan Kumar Sharma",
       "dob": "August 12, 1992 (31)",
@@ -416,6 +415,5 @@
       "Rating": 3
     }
   ],
-  "BookedCabList": [
-  ]
+  "BookedCabList": []
 }

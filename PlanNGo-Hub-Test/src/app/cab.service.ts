@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CabCardDetails } from './cabcards/cabcard-details';
+import { CabCardDetails } from './cab/Components/cabcards/cabcard-details';
 
 @Injectable({
   providedIn: 'root'
