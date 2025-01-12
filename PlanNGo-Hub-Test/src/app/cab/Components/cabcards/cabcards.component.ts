@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CabCardDetails } from './cabcard-details';
 import { CommonModule } from '@angular/common';
 import { CabDetailsPopupComponent } from '../cab-details-popup/CabDetailsPopupComponent';
-import { CabService } from '../cab.service';
+import { CabService } from '../../../cab.service';
 @Component({
   selector: 'app-cabcards',
   standalone: true,

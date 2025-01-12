@@ -4,7 +4,7 @@ import { CabcardsComponent } from '../cabcards/cabcards.component';
 import { CabCardDetails } from '../cabcards/cabcard-details';
 import { SidebarComponent } from "../sidebar/sidebar.component";
 import { SearchbarModule } from "../searchbar/searchbar.module";
-import { CabService } from '../cab.service';
+import { CabService } from '../../../cab.service';
 @Component({
   selector: 'app-cab',
   standalone: true,
