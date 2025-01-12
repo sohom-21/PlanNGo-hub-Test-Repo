@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { CabCardDetails } from '../cabcards/cabcard-details';
+import { CabCardDetails } from '../../model/cabcard-details';
 
 
 @Component({
