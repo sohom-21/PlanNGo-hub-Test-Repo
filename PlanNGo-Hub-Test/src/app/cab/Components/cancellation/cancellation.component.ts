@@ -3,12 +3,13 @@ import { CabService } from '../../services/cab.service';
 import { CabCardDetails } from '../../model/cabcard-details';
 import { CommonModule } from '@angular/common';
 import { CabcardsComponent } from '../cabcards/cabcards.component';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-cancellation',
   standalone: true,
-  imports: [CommonModule, CabcardsComponent] ,
+  imports: [CommonModule, CabcardsComponent ,RouterLink] ,
   templateUrl: './cancellation.component.html',
   styleUrls: ['./cancellation.component.css']
 })
