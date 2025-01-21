@@ -22,12 +22,11 @@ import { RouterLink } from '@angular/router';
 <div class="navbar-home">
 <ul class="snip1217">
   <li class="current"><a routerLink="/" routerLinkActive="active" class="tc" >Home</a></li>
-
   <li><a routerLink="/search" routerLinkActive="active" class="tc" >Search And Book</a></li>
-
   <li><a  routerLink="/history" routerLinkActive="active">History</a></li>
   <li><a routerLink="/cancellation" routerLinkActive="active">Cancel</a></li>
   <li><a routerLink="/updates" routerLinkActive="active">Update</a></li>
+  <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
 </ul>
 </div>
 <div class="container">
