@@ -99,15 +99,22 @@ button {
         color: #495057;
 }
 
-
 .book-btn {
-        background: #16314e;
+        background: #5ac93e; /* Green color */
         color: white;
+        position: relative;
+        padding-left: 2.5rem; /* Space for the check mark */
 }
 
+.book-btn::before {
+        content: '\f00c'; /* FontAwesome check mark (fa-check) */
+        font-family: "FontAwesome";
+        position: absolute;
+        left: 0.5rem;
+        font-size: 1.25rem;
+}
 
 button:hover {
-        
         transform: translateY(-2px);
 }
 
@@ -134,7 +141,7 @@ button:hover {
         color: white;
 }
 .card-buttons:last-child{
-        background: #007bff;
+        background: #5ac93e;
         color: white;
 }
 
@@ -172,7 +179,7 @@ button:hover {
         background: #dc3545;
         color: white;
 }
-/*  click animation */
+/* click animation */
 @keyframes buttonClick {
         0% {
                 transform: scale(1);
@@ -220,5 +227,5 @@ button:hover {
 }
 
 .card-buttons:last-child:hover {
-        background:  #0dd1f4;
+        background:  #d2dfca;
 }
