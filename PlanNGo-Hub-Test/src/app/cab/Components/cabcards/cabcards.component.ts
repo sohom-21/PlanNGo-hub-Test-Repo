@@ -3,10 +3,11 @@ import { CabCardDetails } from '../../model/cabcard-details';
 import { CommonModule } from '@angular/common';
 import { CabDetailsPopupComponent } from '../cab-details-popup/CabDetailsPopupComponent';
 import { CabService } from '../../services/cab.service';
+import { BookingConfirmationComponent } from '../booking-confirmation/booking-confirmation.component';
 @Component({
   selector: 'app-cabcards',
   standalone: true,
-  imports: [CommonModule, CabDetailsPopupComponent],
+  imports: [CommonModule, CabDetailsPopupComponent,BookingConfirmationComponent],
   template: `
     <div class="cabcard-body">
       <div class="cabcard" [class.available]="cabCardDetails.available">
@@ -92,6 +93,12 @@ import { CabService } from '../../services/cab.service';
       [onClose]="closePopup"
     ></app-cab-details-popup>
     }
+        <app-booking-confirmation
+  *ngIf="isBookingConfirmed"
+  [cabDetails]="cabCardDetails"
+  [onClose]="closePopup"
+></app-booking-confirmation>
+
   `,
   styleUrls: ['./cabcards.component.css'],
 })
@@ -101,11 +108,13 @@ export class CabcardsComponent {
   bookClicked = false;
   isPopupVisible = false;
   cancelClicked = false; 
+  isBookingConfirmed = false; 
+
 
   constructor(private cabService: CabService) {}
   isBooked = false; // To change the button text and booking status
   closePopup = () => {
-    this.isPopupVisible = false;
+    this.isBookingConfirmed = false; 
   };
   onDetailsClick() {
     this.detailsClicked = true;
@@ -125,6 +134,8 @@ export class CabcardsComponent {
       // Updating the button text and cab availability
       this.isBooked = true;
       this.cabCardDetails.available = false;
+      this.isBookingConfirmed = true; //
+
     } catch (error) {
       console.error('Error booking cab:', error);
       // Handle the error gracefully, maybe show an error message to the user
@@ -135,6 +146,10 @@ export class CabcardsComponent {
       }, 600);
     }
   }
+  losePopup = () => {
+    this.isPopupVisible = false;
+    this.isBookingConfirmed = false; // Close booking confirmation popup
+  };
   async onCancelBooking() {
     this.cancelClicked = true; // Trigger Cancel button animation
     try {
