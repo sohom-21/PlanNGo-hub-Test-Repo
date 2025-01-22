@@ -12,11 +12,16 @@ import { BookingConfirmationComponent } from '../booking-confirmation/booking-co
     <div class="cabcard-body">
       <div class="cabcard" [class.available]="cabCardDetails.available">
         <div class="cabcard-header">
-          <div class="ride-type">
+          <div class="ride-type" *ngIf="cabCardDetails.rideType.length<10; else elseblock">
             <i class="fas fa-car"></i>
             <h3>{{ cabCardDetails.rideType }}</h3>
             <h3>{{ cabCardDetails.id | slice : -2 }}</h3>
           </div>
+          <ng-template #elseblock>
+            <i class="fas fa-car"></i>
+            <h4>{{ cabCardDetails.rideType }}</h4>
+            <h4>{{ cabCardDetails.id | slice : -2 }}</h4>
+          </ng-template>
           <div
             class="availability-badge"
             [class.not-available]="!cabCardDetails.available"
@@ -69,7 +74,7 @@ import { BookingConfirmationComponent } from '../booking-confirmation/booking-co
             [disabled]="cabCardDetails.Booked"
             >
             <div *ngIf="!cabCardDetails.Booked">Book Now</div>
-            <div *ngIf="cabCardDetails.Booked">Booked</div>
+            <div *ngIf="cabCardDetails.Booked"><del>Book</del></div>
             <!-- <i class="fas fa-check-circle"></i> Book Now-->
           </button>
           <button class="card-buttons-cancel" 
