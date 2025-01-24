@@ -3,25 +3,20 @@ import { CabCardDetails } from '../../model/cabcard-details';
 import { CommonModule } from '@angular/common';
 import { CabDetailsPopupComponent } from '../cab-details-popup/CabDetailsPopupComponent';
 import { CabService } from '../../services/cab.service';
-import { BookingConfirmationComponent } from '../booking-confirmation/booking-confirmation.component';
+import { UserDetailsFormModule } from '../user-details-form/user-details.module';
 @Component({
   selector: 'app-cabcards',
   standalone: true,
-  imports: [CommonModule, CabDetailsPopupComponent,BookingConfirmationComponent],
+  imports: [CommonModule, CabDetailsPopupComponent, UserDetailsFormModule],
   template: `
     <div class="cabcard-body">
       <div class="cabcard" [class.available]="cabCardDetails.available">
         <div class="cabcard-header">
-          <div class="ride-type" *ngIf="cabCardDetails.rideType.length<10; else elseblock">
+          <div class="ride-type">
             <i class="fas fa-car"></i>
             <h3>{{ cabCardDetails.rideType }}</h3>
             <h3>{{ cabCardDetails.id | slice : -2 }}</h3>
           </div>
-          <ng-template #elseblock>
-            <i class="fas fa-car"></i>
-            <h4>{{ cabCardDetails.rideType }}</h4>
-            <h4>{{ cabCardDetails.id | slice : -2 }}</h4>
-          </ng-template>
           <div
             class="availability-badge"
             [class.not-available]="!cabCardDetails.available"
@@ -30,7 +25,7 @@ import { BookingConfirmationComponent } from '../booking-confirmation/booking-co
               class="fas fa-check-circle fa-fade"
               *ngIf="cabCardDetails.available"
             ></i>
-            {{ cabCardDetails.available ? 'Available' : 'Not Available' }}
+            {{ cabCardDetails.available ? 'Available' : 'Booked' }}
           </div>
         </div>
         <div class="cabcard-content">
@@ -74,7 +69,7 @@ import { BookingConfirmationComponent } from '../booking-confirmation/booking-co
             [disabled]="cabCardDetails.Booked"
             >
             <div *ngIf="!cabCardDetails.Booked">Book Now</div>
-            <div *ngIf="cabCardDetails.Booked"><del>Book</del></div>
+            <div *ngIf="cabCardDetails.Booked">Booked</div>
             <!-- <i class="fas fa-check-circle"></i> Book Now-->
           </button>
           <button class="card-buttons-cancel" 
@@ -87,18 +82,17 @@ import { BookingConfirmationComponent } from '../booking-confirmation/booking-co
         </div>
       </div>
     </div>
+    <app-user-details-form
+    *ngIf="isFormVisible"
+    (formSubmit)="handleFormSubmit($event)"
+    (close)="isFormVisible = false"
+  ></app-user-details-form>
     @if (isPopupVisible) {
     <app-cab-details-popup
       [cabDetails]="cabCardDetails"
       [onClose]="closePopup"
     ></app-cab-details-popup>
     }
-        <app-booking-confirmation
-  *ngIf="isBookingConfirmed"
-  [cabDetails]="cabCardDetails"
-  [onClose]="closePopup"
-></app-booking-confirmation>
-
   `,
   styleUrls: ['./cabcards.component.css'],
 })
@@ -108,14 +102,25 @@ export class CabcardsComponent {
   bookClicked = false;
   isPopupVisible = false;
   cancelClicked = false; 
-  isBookingConfirmed = false; 
+  isFormVisible = false;
 
+  async handleFormSubmit(userDetails: { name: string; email: string }) {
+    this.isFormVisible = false;
+    try {
+      await this.cabService.bookCab(this.cabCardDetails.id, userDetails);
+      this.cabCardDetails.Booked = true;
+      this.cabCardDetails.available = false;
+    } catch (error) {
+      console.error('Error booking cab:', error);
+    }
+  }
 
   constructor(private cabService: CabService) {}
   isBooked = false; // To change the button text and booking status
   closePopup = () => {
-    this.isBookingConfirmed = false; 
+    this.isPopupVisible = false;
   };
+
   onDetailsClick() {
     this.detailsClicked = true;
     this.isPopupVisible = true;
@@ -126,30 +131,26 @@ export class CabcardsComponent {
 
   async onBookClick() {
     if (this.isBooked) return;
-
+    this.isFormVisible = true;
     this.bookClicked = true;
-    try {
-      // Calling the booking service function
-      await this.cabService.bookCab(this.cabCardDetails.id);
-      // Updating the button text and cab availability
-      this.isBooked = true;
-      this.cabCardDetails.available = false;
-      this.isBookingConfirmed = true; //
 
-    } catch (error) {
-      console.error('Error booking cab:', error);
-      // Handle the error gracefully, maybe show an error message to the user
-    } finally {
+    // try {
+    //   // Calling the booking service function
+    //   await this.cabService.bookCab(this.cabCardDetails.id, { name: 'user name', email: 'user email' });
+    //   // Updating the button text and cab availability
+    //   this.isBooked = true;
+    //   this.cabCardDetails.available = false;
+    // } catch (error) {
+    //   console.error('Error booking cab:', error);
+    //   // Handle the error gracefully, maybe show an error message to the user
+    // } finally {
       // Reset animation
+
       setTimeout(() => {
         this.bookClicked = false;
       }, 600);
-    }
+    // }
   }
-  losePopup = () => {
-    this.isPopupVisible = false;
-    this.isBookingConfirmed = false; // Close booking confirmation popup
-  };
   async onCancelBooking() {
     this.cancelClicked = true; // Trigger Cancel button animation
     try {

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CabcardsComponent } from '../cabcards/cabcards.component';
 import { CabCardDetails } from '../../model/cabcard-details';
@@ -8,9 +8,7 @@ import { CabService } from '../../services/cab.service';
 @Component({
   selector: 'app-cab',
   standalone: true,
-  imports: [CommonModule,
-    CabcardsComponent, SidebarComponent, SearchbarModule],
-
+  imports: [CommonModule,CabcardsComponent, SidebarComponent, SearchbarModule],
   template: `
    <div class="cabcard-container">
       <app-sidebar></app-sidebar>

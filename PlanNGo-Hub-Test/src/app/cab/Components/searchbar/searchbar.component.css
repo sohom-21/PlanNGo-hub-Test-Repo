@@ -52,7 +52,12 @@ form {
   color: #032142;
   font-weight: 700;  
 }
-
+.input-field::placeholder {
+  width: 130px;
+  text-align: left;
+  color: #000000; /* Optional: Change placeholder text color */
+  opacity: 1; /* Ensure placeholder is fully visible */
+}
 .input-field:focus,
 .select-field:focus {
   border-color: #007bff;
