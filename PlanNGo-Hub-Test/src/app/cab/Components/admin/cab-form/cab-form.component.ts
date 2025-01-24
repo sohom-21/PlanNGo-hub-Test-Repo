@@ -9,11 +9,11 @@ import { Component,input } from '@angular/core';
   <div class="popup-overlay" (click)="onClose()()">
       <div class="popup-content" (click)="$event.stopPropagation()">
         <div class="container">
-        <div class="h1"><h2>Cab form</h2></div>
+          <div class="h1"><h2>Cab form</h2></div>
   <div class="form-part">
 
     <div class="form-inputs">
-      <div class="sqr-input">
+      <!--<div class="sqr-input">
         <div class="text-input margin-bottom-zero">
           <div class="sqr-input">
             <div class="text-input">
@@ -44,31 +44,78 @@ import { Component,input } from '@angular/core';
             <option value="3">HATCHBACK</option>
             <option value="4">OLA</option>
         </select>
-      </div>
-      <div class="text-input">
-        <label for="email">PICKUP LOCATION</label>
-        <input type="text" name="email" id="email">
-      </div>
-
-
-      <div class="text-input">
-        <label for="address">DROPOFF LOCATION</label>
-        <input type="text" name="address" id="address">
-      </div>
-
+      </div>-->
       <div class="cub-input">
         <div class="text-input">
-          <label for="street">RIDER NO.</label>
+          <label for="street">Cab ID</label>
           <input type="text" name="street" id="street">
         </div>
         <div class="text-input">
-          <label for="postalcode">LICENCE NO.</label>
+          <label for="postalcode">Cab Name</label>
           <input type="text" name="postalcode" id="postalcode">
         </div>
-        <div class="text-input">
+        <!--<div class="text-input">
           <label for="city">NAME PLATE</label>
           <input type="text" name="city" id="city">
+        </div>-->
+        <div class="clearfix"></div>
+      </div>
+      <div class="cub-input">
+        <div class="text-input">
+          <label for="street">Pickup</label>
+          <input type="text" name="street" id="street">
         </div>
+        <div class="text-input">
+          <label for="postalcode">Dropoff</label>
+          <input type="text" name="postalcode" id="postalcode">
+        </div>
+        <!--<div class="text-input">
+          <label for="city">NAME PLATE</label>
+          <input type="text" name="city" id="city">
+        </div>-->
+        <div class="clearfix"></div>
+      </div>
+      <div class="cub-input">
+        <div class="text-input">
+          <label for="street">Drivers name</label>
+          <input type="text" name="street" id="street">
+        </div>
+        <div class="text-input">
+          <label for="postalcode">Time</label>
+          <input type="time" name="postalcode" id="postalcode">
+        </div>
+        <!--<div class="text-input">
+          <label for="city">NAME PLATE</label>
+          <input type="text" name="city" id="city">
+        </div>-->
+        <div class="clearfix"></div>
+      </div>
+      <div class="cub-input">
+        <div class="text-input">
+          <label for="street">Price</label>
+          <input type="text" name="street" id="street">
+        </div>
+        <div class="text-input">
+          <label for="postalcode">Language</label>
+          <input type="text" name="postalcode" id="postalcode">
+        </div>
+        <!--<div class="text-input">
+          <label for="city">NAME PLATE</label>
+          <input type="text" name="city" id="city">
+        </div>-->
+      <div class="cub-input">
+        <div class="text-input">
+          <label for="street">Rider</label>
+          <input type="text" name="street" id="street">
+        </div>
+        <div class="text-input">
+          <label for="postalcode">Licence</label>
+          <input type="text" name="postalcode" id="postalcode">
+        </div>
+        <!--<div class="text-input">
+          <label for="city">NAME PLATE</label>
+          <input type="text" name="city" id="city">
+        </div>-->
         <div class="clearfix"></div>
       </div>
 
@@ -112,7 +159,7 @@ import { Component,input } from '@angular/core';
 
 
     </div>
-   <div class="footer"><button class="button-50" role="button">Submit</button></div>
+   <div class="footer"><button class="button-50" role="button" (click)="onClose()()">Submit</button></div>
   </div>
 </div>
       </div>
