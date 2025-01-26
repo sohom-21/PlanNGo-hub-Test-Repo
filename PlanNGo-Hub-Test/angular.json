@@ -78,7 +78,7 @@
           },
           "defaultConfiguration": "development",
           "options":{
-            "proxyConfig": "proxy.cof.json"
+            "proxyConfig": "proxy.conf.json"
           }
         },
         "extract-i18n": {

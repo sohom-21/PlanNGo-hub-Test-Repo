@@ -1,172 +1,189 @@
-import { Component,input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CabCardDetails } from '../../../model/cabcard-details';
+import { AdminCabService } from '../../../services/admin-cab.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cab-form',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule, CommonModule],
   template: `
-  
-  <div class="popup-overlay" (click)="onClose()()">
-      <div class="popup-content" (click)="$event.stopPropagation()">
-        <div class="container">
-          <div class="h1"><h2>Cab form</h2></div>
-  <div class="form-part">
+    <!-- cab-form.component.ts template -->
+<div class="popup-overlay" (click)="onClose()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <div class="container">
+      <div class="header">
+        <h2>Cab Registration</h2>
+      </div>
+      <form [formGroup]="cabForm" (ngSubmit)="onSubmit()">
+        <div class="form-columns">
+          <!-- Left Column -->
+          <div class="form-column">
+            <div class="text-input">
+              <label for="FullName">Driver's Full Name</label>
+              <input type="text" id="FullName" formControlName="FullName" />
+            </div>
+            
+            <div class="text-input">
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" formControlName="dob" />
+            </div>
 
-    <div class="form-inputs">
-      <!--<div class="sqr-input">
-        <div class="text-input margin-bottom-zero">
-          <div class="sqr-input">
             <div class="text-input">
-              <label for="fname">CAB ID</label>
-              <input type="text" name="fname" id="fname" >
+              <label for="Language">Language</label>
+              <select id="Language" formControlName="Language">
+                <option value="Hindi">Hindi</option>
+                <option value="English">English</option>
+                <option value="Telugu">Telugu</option>
+                <option value="Punjabi">Punjabi</option>
+              </select>
             </div>
+
             <div class="text-input">
-              <label for="lname">CAB NAME</label>
-              <input type="text" name="lnaem" id="lnaem">
+              <label for="rideType">Cab Type</label>
+              <select id="rideType" formControlName="rideType">
+                <option value="Sedan CAB">Sedan</option>
+                <option value="SUV CAB">SUV</option>
+                <option value="VAN CAB">Van</option>
+                <option value="HATCHBACK CAB">Hatchback</option>
+                <option value="OLA CAB">OLA</option>
+                <option value="Luxury CAB">Luxury</option>
+              </select>
             </div>
-            <div class="clearfix"></div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="form-column">
+            <div class="text-input">
+              <label for="pickupLocation">Pickup Location</label>
+              <input type="text" id="pickupLocation" formControlName="pickupLocation" />
+            </div>
+
+            <div class="text-input">
+              <label for="dropoffLocation">Dropoff Location</label>
+              <input type="text" id="dropoffLocation" formControlName="dropoffLocation" />
+            </div>
+
+            <div class="input-group">
+                  <div class="text-input">
+                    <label>Time</label>
+                    <div class="time-picker">
+                      <select id="hour" formControlName="hour">
+                        <option *ngFor="let h of hours" [value]="h">{{ h }}</option>
+                      </select>
+                      <span>:</span>
+                      <select id="minute" formControlName="minute">
+                        <option *ngFor="let m of minutes" [value]="m">{{ m }}</option>
+                      </select>
+                      <select id="period" formControlName="period">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                      </select>
+                    </div>
+                  </div>
+
+              <div class="text-input">
+                <label for="price">Price (₹)</label>
+                <input type="number" id="price" formControlName="price" />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <div class="text-input">
+                <label for="Rider">Rider ID</label>
+                <input type="text" id="Rider" formControlName="Rider" />
+              </div>
+
+              <div class="text-input">
+                <label for="Licence">Licence Number</label>
+                <input type="text" id="Licence" formControlName="Licence" />
+              </div>
+            </div>
           </div>
         </div>
-        <div class="text-input">
-          <label for="phone">DRIVER'S NAME</label>
-          <input type="text" name="phone" id="phone">
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      <div class="text-input">
-        <label for="country">Cab Type</label>
-        <select name="country" id="country">
-            <option value="0" selected>--- Choose cab type ---</option>
-            <option value="1">SUV</option>
-            <option value="2">LUXURY</option>
-            <option value="3">SEDAN</option>
-            <option value="4">VAN</option>
-            <option value="3">HATCHBACK</option>
-            <option value="4">OLA</option>
-        </select>
-      </div>-->
-      <div class="cub-input">
-        <div class="text-input">
-          <label for="street">Cab ID</label>
-          <input type="text" name="street" id="street">
-        </div>
-        <div class="text-input">
-          <label for="postalcode">Cab Name</label>
-          <input type="text" name="postalcode" id="postalcode">
-        </div>
-        <!--<div class="text-input">
-          <label for="city">NAME PLATE</label>
-          <input type="text" name="city" id="city">
-        </div>-->
-        <div class="clearfix"></div>
-      </div>
-      <div class="cub-input">
-        <div class="text-input">
-          <label for="street">Pickup</label>
-          <input type="text" name="street" id="street">
-        </div>
-        <div class="text-input">
-          <label for="postalcode">Dropoff</label>
-          <input type="text" name="postalcode" id="postalcode">
-        </div>
-        <!--<div class="text-input">
-          <label for="city">NAME PLATE</label>
-          <input type="text" name="city" id="city">
-        </div>-->
-        <div class="clearfix"></div>
-      </div>
-      <div class="cub-input">
-        <div class="text-input">
-          <label for="street">Drivers name</label>
-          <input type="text" name="street" id="street">
-        </div>
-        <div class="text-input">
-          <label for="postalcode">Time</label>
-          <input type="time" name="postalcode" id="postalcode">
-        </div>
-        <!--<div class="text-input">
-          <label for="city">NAME PLATE</label>
-          <input type="text" name="city" id="city">
-        </div>-->
-        <div class="clearfix"></div>
-      </div>
-      <div class="cub-input">
-        <div class="text-input">
-          <label for="street">Price</label>
-          <input type="text" name="street" id="street">
-        </div>
-        <div class="text-input">
-          <label for="postalcode">Language</label>
-          <input type="text" name="postalcode" id="postalcode">
-        </div>
-        <!--<div class="text-input">
-          <label for="city">NAME PLATE</label>
-          <input type="text" name="city" id="city">
-        </div>-->
-      <div class="cub-input">
-        <div class="text-input">
-          <label for="street">Rider</label>
-          <input type="text" name="street" id="street">
-        </div>
-        <div class="text-input">
-          <label for="postalcode">Licence</label>
-          <input type="text" name="postalcode" id="postalcode">
-        </div>
-        <!--<div class="text-input">
-          <label for="city">NAME PLATE</label>
-          <input type="text" name="city" id="city">
-        </div>-->
-        <div class="clearfix"></div>
-      </div>
 
-
-      <!--<div class="radio-button">
-        <label>Gender</label>
-        <ul>
-          <li>
-            <input type="radio" name="gender" class="chek" /><span>Male</span>
-          </li>
-          <li>
-            <input type="radio" name="gender" class="chek"/><span>Female</span>
-          </li>
-        </ul>
-      </div>-->
-      <!--<div class="sqr-radio-input">
-        <div class="radio-button">
-          <label>I like</label>
-          <ul>
-            <li>
-              <input type="radio" name="drink" /><span>Cola</span>
-            </li>
-            <li>
-              <input type="radio" name="drink" /><span>Soda</span>
-            </li>
-          </ul>
+        <div class="footer">
+          <button class="button-50" type="submit">Register Cab</button>
         </div>
-        <div class="radio-button">
-          <label>I Love</label>
-          <ul>
-            <li>
-              <input type="radio" name="drink" /><span>CSS</span>
-            </li>
-            <li>
-              <input type="radio" name="drink" /><span>SCSS</span>
-            </li>
-          </ul>
-        </div>
-        <div class="clearfix"></div>
-      </div>-->
-
-
+      </form>
     </div>
-   <div class="footer"><button class="button-50" role="button" (click)="onClose()()">Submit</button></div>
   </div>
 </div>
-      </div>
-    </div>
   `,
   styleUrl: './cab-form.component.css'
 })
 export class CabFormComponent {
-   readonly onClose = input.required<() => void>();
+  @Input() onClose: () => void = () => {};
+
+  hours = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+  minutes = ['00', '15', '30', '45'];
+
+  cabForm: FormGroup = this.fb.group({
+    FullName: ['', Validators.required],
+    dob: ['', Validators.required],
+    Language: ['Hindi', Validators.required],
+    rideType: ['Sedan CAB', Validators.required],
+    pickupLocation: ['', Validators.required],
+    dropoffLocation: ['', Validators.required],
+    hour: ['10', Validators.required],
+    minute: ['00', Validators.required],
+    period: ['AM', Validators.required],
+    price: [1000, Validators.required],
+    Rider: ['', Validators.required],
+    Licence: ['', Validators.required],
+  });
+
+  constructor(
+    private fb: FormBuilder,
+    private adminCabService: AdminCabService
+  ) {}
+
+  private generateCabId(): string {
+    return 'cb_' + Math.random().toString(36).substr(2, 9);
+  }
+
+  private formatDob(dob: string): string {
+    const date = new Date(dob);
+    const month = date.toLocaleString('default', { month: 'long' });
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const age = new Date().getFullYear() - year;
+    return `${month} ${day}, ${year} (${age})`;
+  }
+
+  onSubmit() {
+    if (this.cabForm.valid) {
+      const formValue = this.cabForm.value;
+      
+      const newCabData: CabCardDetails = {
+        id: this.generateCabId(),
+        FullName: formValue.FullName,
+        dob: this.formatDob(formValue.dob),
+        Language: formValue.Language,
+        Rider: formValue.Rider,
+        Licence: formValue.Licence,
+        rideType: formValue.rideType,
+        pickupLocation: formValue.pickupLocation,
+        dropoffLocation: formValue.dropoffLocation,
+        time: `${formValue.hour}:${formValue.minute} ${formValue.period}`,
+        price: formValue.price,
+        available: true,
+        Booked: false,
+        Cancelled: false,
+        Completed: false,
+        Rating: 0
+      };
+
+      this.adminCabService.createNewCab(newCabData)
+        .subscribe({
+          next: (response) => {
+            console.log('Cab created:', response);
+            this.cabForm.reset();
+            this.onClose();
+          },
+          error: (err) => console.error('Error:', err)
+        });
+    }
+  }
 }
