@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RmTableComponent } from '../rm-table/rm-table.component';
-import {EmpFormComponent} from '../emp-form/emp-form.component'
+import{EmployeeFormComponent} from '../employee-form/employee-form.component'
+
 @Component({
   selector: 'app-employee',
   standalone: true,
-  imports: [RmTableComponent,EmpFormComponent],
+  imports: [RmTableComponent,EmployeeFormComponent],
   template: `
   <div class="navbar">
    <ul>
@@ -22,7 +23,7 @@ import {EmpFormComponent} from '../emp-form/emp-form.component'
 
     <app-rm-table></app-rm-table>
     @if (isPopupVisible==true)
-  {<app-emp-form [onClose]="closePopup"></app-emp-form>}
+  {<app-employee-form [onClose]="closePopup"></app-employee-form>}
 
     
   `,
