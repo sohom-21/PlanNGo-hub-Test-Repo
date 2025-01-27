@@ -139,7 +139,7 @@ import{RmTableComponent} from '../rm-table/rm-table.component'
       <div>
   <!--for demo wrap-->
   <h1>BOOKED CABS</h1>
-  <div class="tbl-header">
+  <!-- <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
@@ -150,8 +150,8 @@ import{RmTableComponent} from '../rm-table/rm-table.component'
           <th>Timing</th>
         </tr>
       </thead>
-    </table>
-  </div>
+    </table
+  </div> -->
   <app-rm-table></app-rm-table>
       </div>
 
