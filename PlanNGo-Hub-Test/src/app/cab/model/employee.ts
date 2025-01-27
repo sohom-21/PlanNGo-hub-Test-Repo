@@ -1,10 +1,8 @@
-export interface CabCardDetails {
+export interface Employee {
          EmployeeName: string;
          EmployeeEmail: string;
-         phone: Number;
+         phone: number;
          employementType: string;
          DOB: string;
          Gender: string;
-         price: number;
 }
-     
