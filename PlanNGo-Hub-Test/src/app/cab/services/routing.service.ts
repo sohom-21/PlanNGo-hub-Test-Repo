@@ -6,35 +6,35 @@ import { RouteRequest, RouteResponse } from '../Components/update/routing';
 })
 export class RouteService {
   private apiUrl = '/ors/v2/directions/driving-car';
-  private apiKey = '5b3ce3597851110001cf6248e3c2b93ce282428b80acb2538a7f51ab'; 
+  private apiKey = '5b3ce3597851110001cf6248e3c2b93ce282428b80acb2538a7f51ab';
 
-   constructor() {}
+  constructor() {}
 
   async getRoute(start: [number, number], end: [number, number]): Promise<RouteResponse> {
-    const request: RouteRequest = {
-      origin: start,
-      destination: end
+    const requestBody = {
+      coordinates: [start, end],
+      instructions: true,
+      geometry: true
     };
-    const url = `${this.apiUrl}?api_key=${this.apiKey}&start=${request.origin[0]},${request.origin[1]}&end=${request.destination[0]},${request.destination[1]}`;
 
     try {
-      const response = await fetch(url, {
+      const response = await fetch(this.apiUrl, {
+        method: 'POST',
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
+          'Authorization': this.apiKey,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
       });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      const data: RouteResponse = await response.json();
-      return data; 
-
+      return await response.json();
     } catch (error) {
       console.error('Error fetching route:', error);
-      throw error; 
+      throw error;
     }
   }
 }
-

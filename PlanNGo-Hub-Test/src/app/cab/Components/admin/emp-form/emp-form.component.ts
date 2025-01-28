@@ -1,137 +1,108 @@
-import { Component,input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Employee } from '../../../model/employee';
+import { AdminCabService } from '../../../services/admin-cab.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-emp-form',
   standalone: true,
-  imports: [],
-  template:`
-  <div class="popup-overlay" (click)="onClose()()">
-      <div class="popup-content" (click)="$event.stopPropagation()">
-        <div class="container">
-          <div class="h1"><h2>Employe form</h2></div>
-  <div class="form-part">
+  imports: [ReactiveFormsModule, CommonModule],
+  template: `
+  <div class="popup-overlay" (click)="onClose()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <div class="container">
+        <div class="header">
+          <h2>Employee Registration</h2>
+        </div>
+        <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+          <div class="form-columns">
+            <div class="form-column">
+              <div class="text-input">
+                <label for="EmployeeName">Employee Name</label>
+                <input type="text" id="EmployeeName" formControlName="EmployeeName" />
+              </div>
 
-    <div class="form-inputs">
-      <!--<div class="sqr-input">
-        <div class="text-input margin-bottom-zero">
-          <div class="sqr-input">
-            <div class="text-input">
-              <label for="fname">CAB ID</label>
-              <input type="text" name="fname" id="fname" >
+              <div class="text-input">
+                <label for="EmployeeEmail">Email</label>
+                <input type="email" id="EmployeeEmail" formControlName="EmployeeEmail" />
+              </div>
+
+              <div class="text-input">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" formControlName="phone" />
+              </div>
             </div>
-            <div class="text-input">
-              <label for="lname">CAB NAME</label>
-              <input type="text" name="lnaem" id="lnaem">
+
+            <div class="form-column">
+              <div class="text-input">
+                <label for="employementType">Employment Type</label>
+                <select id="employementType" formControlName="employementType">
+                  <option value="Driver">Driver</option>
+                  <option value="Admin">Admin</option>
+                  <option value="HR">HR</option>
+                  <option value="Manager">Manager</option>
+                </select>
+              </div>
+
+              <div class="text-input">
+                <label for="DOB">Date of Birth</label>
+                <input type="date" id="DOB" formControlName="DOB" />
+              </div>
+
+              <div class="text-input">
+                <label for="Gender">Gender</label>
+                <select id="Gender" formControlName="Gender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
             </div>
-            <div class="clearfix"></div>
           </div>
-        </div>
-        <div class="text-input">
-          <label for="phone">DRIVER'S NAME</label>
-          <input type="text" name="phone" id="phone">
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      <div class="text-input">
-        <label for="country">Cab Type</label>
-        <select name="country" id="country">
-            <option value="0" selected>--- Choose cab type ---</option>
-            <option value="1">SUV</option>
-            <option value="2">LUXURY</option>
-            <option value="3">SEDAN</option>
-            <option value="4">VAN</option>
-            <option value="3">HATCHBACK</option>
-            <option value="4">OLA</option>
-        </select>
-      </div>-->
-      <div class="text-input">
-        <label for="address">Employe Name</label>
-        <input type="text" name="address" id="address">
-      </div>
-      <div class="text-input">
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email">
-      </div>
 
-
-      <div class="text-input">
-        <label for="address">Phone</label>
-        <input type="text" name="address" id="address">
+          <div class="footer">
+            <button class="button-50" type="submit">Register Employee</button>
+          </div>
+        </form>
       </div>
-      <div class="text-input">
-        <label for="country">Employement Type</label>
-        <select name="country" id="country">
-            <option value="0" selected>--- Choose Employement type ---</option>
-            <option value="1">Driver</option>
-            <option value="2">Admin</option>
-            <option value="3">HR</option>
-            <option value="4">Manager</option>
-        </select>
-      </div>
-      <div class="cub-input">
-        <div class="text-input">
-          <label for="street">Date of Birth</label>
-          <input type="date" name="street" id="street">
-        </div>
-        <div class="text-input">
-          <label for="postalcode">Gender</label>
-          <input type="text" name="postalcode" id="postalcode">
-        </div>
-        <!--<div class="text-input">
-          <label for="city">NAME PLATE</label>
-          <input type="text" name="city" id="city">
-        </div>-->
-        <div class="clearfix"></div>
-      </div>
-
-
-      <!--<div class="radio-button">
-        <label>Gender</label>
-        <ul>
-          <li>
-            <input type="radio" name="gender" class="chek" /><span>Male</span>
-          </li>
-          <li>
-            <input type="radio" name="gender" class="chek"/><span>Female</span>
-          </li>
-        </ul>
-      </div>-->
-      <!--<div class="sqr-radio-input">
-        <div class="radio-button">
-          <label>I like</label>
-          <ul>
-            <li>
-              <input type="radio" name="drink" /><span>Cola</span>
-            </li>
-            <li>
-              <input type="radio" name="drink" /><span>Soda</span>
-            </li>
-          </ul>
-        </div>
-        <div class="radio-button">
-          <label>I Love</label>
-          <ul>
-            <li>
-              <input type="radio" name="drink" /><span>CSS</span>
-            </li>
-            <li>
-              <input type="radio" name="drink" /><span>SCSS</span>
-            </li>
-          </ul>
-        </div>
-        <div class="clearfix"></div>
-      </div>-->
-
-
     </div>
-   <div class="footer"><button class="button-50" role="button">Submit</button></div>
   </div>
-</div>
-      </div>
-    </div>
   `,
   styleUrl: './emp-form.component.css'
 })
 export class EmpFormComponent {
-readonly onClose = input.required<() => void>();
+  @Input() onClose: () => void = () => {};
+
+  empForm: FormGroup = this.fb.group({
+    EmployeeName: ['', Validators.required],
+    EmployeeEmail: ['', [Validators.required, Validators.email]],
+    phone: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+    employementType: ['Driver', Validators.required],
+    DOB: ['', Validators.required],
+    Gender: ['Male', Validators.required]
+  });
+
+  constructor(
+    private fb: FormBuilder,
+    private adminCabService: AdminCabService
+  ) {}
+
+  onSubmit() {
+    if (this.empForm.valid) {
+      const employeeData: Employee = {
+        ...this.empForm.value,
+        DOB: new Date(this.empForm.value.DOB).toISOString().split('T')[0] // Format date
+      };
+
+      this.adminCabService.createEmployee(employeeData)
+        .subscribe({
+          next: () => {
+            this.empForm.reset();
+            this.onClose();
+          },
+          error: (err) => console.error('Error:', err)
+        });
+    }
+  }
 }

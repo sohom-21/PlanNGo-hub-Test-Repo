@@ -115,7 +115,7 @@ import { Component ,input} from '@angular/core';
 
 
     </div>
-   <div class="footer"><button class="button-50" role="button">Submit</button></div>
+   <div class="footer"><button class="button-50" role="button" (click)="onClose()()">Submit</button></div>
   </div>
 </div>
       </div>
