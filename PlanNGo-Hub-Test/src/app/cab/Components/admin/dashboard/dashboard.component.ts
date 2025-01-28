@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
-import{RmTableComponent} from '../rm-table/rm-table.component'
+import { Component ,OnInit} from '@angular/core';
+import{RmTableComponent} from '../rm-table/rm-table.component';
+import { AdminCabService } from '../../../services/admin-cab.service';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RmTableComponent],
+  imports: [RmTableComponent,CommonModule],
   template: `
   <!--
     navbar  
@@ -49,7 +52,7 @@ import{RmTableComponent} from '../rm-table/rm-table.component'
     </div>
   </div>
   <div class="card">
-    <h1>45</h1>
+   <h1>{{totalCabs}}</h1>
     <p>
       Avaliable cabs
     </p>
@@ -103,7 +106,7 @@ import{RmTableComponent} from '../rm-table/rm-table.component'
     </div>
   </div>
   <div class="card">
-    <h1>25</h1>
+   <h1>{{totalEmployees}}</h1>
     <p>
       Employee
     </p>
@@ -160,6 +163,37 @@ import{RmTableComponent} from '../rm-table/rm-table.component'
   `,
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  totalCabs: number = 0;
+  totalEmployees: number = 0;
 
+  constructor(private adminService: AdminCabService) {}
+
+  ngOnInit() {
+    this.loadCounts();
+  }
+
+  private loadCounts() {
+    // Get total cabs
+    this.adminService.getCabCount().subscribe({
+      next: (count) => {
+        this.totalCabs = count;
+      },
+      error: (error) => {
+        console.error('Error fetching cab count:', error);
+        this.totalCabs = 0;
+      }
+    });
+
+    // Get total employees
+    this.adminService.getEmployeeCount().subscribe({
+      next: (count) => {
+        this.totalEmployees = count;
+      },
+      error: (error) => {
+        console.error('Error fetching employee count:', error);
+        this.totalEmployees = 0;
+      }
+    });
+  }
 }

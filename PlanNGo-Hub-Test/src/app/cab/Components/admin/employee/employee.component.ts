@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { RmTableComponent } from '../rm-table/rm-table.component';
-import{EmployeeFormComponent} from '../employee-form/employee-form.component'
 import { EmpFormComponent } from '../emp-form/emp-form.component';
 
 @Component({
   selector: 'app-employee',
   standalone: true,
-  imports: [RmTableComponent,EmployeeFormComponent,EmpFormComponent],
+  imports: [RmTableComponent,EmpFormComponent],
   template: `
   <div class="navbar">
    <ul>
