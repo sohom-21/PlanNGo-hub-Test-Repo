@@ -161,10 +161,10 @@ export class UpdateComponent implements AfterViewInit, OnDestroy {
       const routeLine = new LineString(routeCoords);
       this.routeSource.addFeature(new Feature(routeLine));
   
-      // Add markers and fit view
+      // Adding markers and fit view
       this.highlightRoute(start, end);
   
-      // Update UI with route info
+      // Updating  UI with route info
       this.routeDistance = `${(route.summary.distance / 1000).toFixed(1)} km`;
       this.routeTime = `${Math.ceil(route.summary.duration / 60)} min`;
       this.routeInstructions = route.segments[0].steps.map(step => step.instruction);
@@ -195,6 +195,7 @@ export class UpdateComponent implements AfterViewInit, OnDestroy {
     // Coordinates have variable length when encoded, so just keep
     // track of whether we've hit the end of the string. In each
     // loop iteration, a single coordinate is decoded.
+    // this just for my help
     while (index < str.length) {
       // Reset shift, result, and byte
       byte = null;
@@ -289,7 +290,7 @@ export class UpdateComponent implements AfterViewInit, OnDestroy {
       this.initMap();
       this.setupMapLayers();
       this.initPopup();
-      this.initGeolocation(); // Add this line
+      this.initGeolocation(); 
     }
   }
 
@@ -516,11 +517,11 @@ export class UpdateComponent implements AfterViewInit, OnDestroy {
       })
     }));
   
-    // Add features to vector layer
+    // Add features to vector layer to make the magic happen
     this.vectorLayer.getSource()?.addFeature(pickupFeature);
     this.vectorLayer.getSource()?.addFeature(dropoffFeature);
   
-    // Fit map to show both points
+    // Fitting map to show both points
     const extent = boundingExtent([fromLonLat(pickupCoords), fromLonLat(dropoffCoords)]);
     this.map?.getView().fit(extent, { padding: [50, 50, 50, 50] });
   }
