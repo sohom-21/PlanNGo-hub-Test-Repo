@@ -1,6 +1,9 @@
 import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { Input } from '@angular/core';
+import { boundingExtent } from 'ol/extent';
+import { CabCardDetails } from '../../model/cabcard-details';
 import 'ol/ol.css';
 import Map from 'ol/Map';
 import View from 'ol/View';
@@ -69,6 +72,43 @@ export class UpdateComponent implements AfterViewInit, OnDestroy {
       style: this.createDefaultStyle()
     });
   }
+
+  @Input() set bookedCab(cab: CabCardDetails | null) {
+    if (cab) {
+      this.showCabRoute(cab.pickupLocation, cab.dropoffLocation);
+    }
+  }
+  
+  private async showCabRoute(pickupLocation: string, dropoffLocation: string) {
+    try {
+      // Convert locations to coordinates
+      const pickupCoords = await this.geocodeLocation(pickupLocation);
+      const dropoffCoords = await this.geocodeLocation(dropoffLocation);
+      
+      if (pickupCoords && dropoffCoords) {
+        await this.calculateRoute(pickupCoords, dropoffCoords);
+      }
+    } catch (error) {
+      console.error('Error showing cab route:', error);
+    }
+  }
+  
+  private async geocodeLocation(location: string): Promise<[number, number] | null> {
+    try {
+      const response = await fetch(
+        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(location)}`
+      );
+      const results = await response.json();
+      
+      if (results.length > 0) {
+        return [parseFloat(results[0].lon), parseFloat(results[0].lat)];
+      }
+      return null;
+    } catch (error) {
+      console.error('Geocoding error:', error);
+      return null;
+    }
+  }
   
   async searchLocation(): Promise<void> {
     if (!this.searchQuery) return;
@@ -102,28 +142,92 @@ export class UpdateComponent implements AfterViewInit, OnDestroy {
 
   private async calculateRoute(start: [number, number], end: [number, number]): Promise<void> {
     try {
+      this.routeInstructions = ['Calculating route...'];
       const response = await this.routeService.getRoute(start, end);
-      const routeCoords = response.features[0].geometry.coordinates.map((coord: [number, number]) => 
-        fromLonLat(coord)
-      );
-         
-      const routeFeature = new Feature({
-        geometry: new LineString(routeCoords)
-      });
-         
+      
+      if (!response || !response.routes || !response.routes[0]) {
+        throw new Error('Invalid route data from API');
+      }
+  
+      const route = response.routes[0];
+      const coordinates = this.decodeGeometry(route.geometry);
+      const routeCoords = coordinates.map(coord => fromLonLat(coord));
+  
+      // Clear previous route and markers
       this.routeSource.clear();
-      this.routeSource.addFeature(routeFeature);
-         
-      const route = response.features[0].properties;
-      this.routeDistance = `${(route.distance / 1000).toFixed(1)} km`;
-      this.routeTime = `${Math.round(route.duration / 60)} minutes`;
-         
-      this.routeInstructions = response.features[0].properties.segments
-        .flatMap((segment: any) => segment.steps)
-        .map((step: any) => step.instruction);
+      this.vectorLayer.getSource()?.clear();
+  
+      // Add the route
+      const routeLine = new LineString(routeCoords);
+      this.routeSource.addFeature(new Feature(routeLine));
+  
+      // Adding markers and fit view
+      this.highlightRoute(start, end);
+  
+      // Updating  UI with route info
+      this.routeDistance = `${(route.summary.distance / 1000).toFixed(1)} km`;
+      this.routeTime = `${Math.ceil(route.summary.duration / 60)} min`;
+      this.routeInstructions = route.segments[0].steps.map(step => step.instruction);
+  
     } catch (error) {
-      console.error('Error calculating route:', error);
+      console.error('Routing error:', error);
+      this.routeInstructions = ['Failed to calculate route'];
+      this.routeDistance = '';
+      this.routeTime = '';
+      this.routeSource.clear();
+      this.vectorLayer.getSource()?.clear();
     }
+}
+  
+  // Add this method to decode the geometry string
+  private decodeGeometry(str: string): [number, number][] {
+    let index = 0;
+    let lat = 0;
+    let lng = 0;
+    const coordinates: [number, number][] = [];
+    let shift = 0;
+    let result = 0;
+    let byte = null;
+    let latitude_change: number;
+    let longitude_change: number;
+    const factor = Math.pow(10, 5);
+  
+    // Coordinates have variable length when encoded, so just keep
+    // track of whether we've hit the end of the string. In each
+    // loop iteration, a single coordinate is decoded.
+    // this just for my help
+    while (index < str.length) {
+      // Reset shift, result, and byte
+      byte = null;
+      shift = 0;
+      result = 0;
+  
+      do {
+        byte = str.charCodeAt(index++) - 63;
+        result |= (byte & 0x1f) << shift;
+        shift += 5;
+      } while (byte >= 0x20);
+  
+      latitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+  
+      shift = result = 0;
+  
+      do {
+        byte = str.charCodeAt(index++) - 63;
+        result |= (byte & 0x1f) << shift;
+        shift += 5;
+      } while (byte >= 0x20);
+  
+      longitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+  
+      lat += latitude_change;
+      lng += longitude_change;
+  
+      coordinates.push([lng / factor, lat / factor]);
+    }
+  
+    return coordinates;
+    
 }
 
   startRouting(): void {
@@ -160,7 +264,7 @@ export class UpdateComponent implements AfterViewInit, OnDestroy {
             const startGeometry = this.startPoint.getGeometry();
             if (startGeometry instanceof Point) {
               const startCoords = toLonLat(startGeometry.getCoordinates()) as [number,number];
-              this.calculateRoute(startCoords, coords);
+              this.calculateRoute(startCoords, coords).catch(error => console.error("Error after calculateRoute:", error));
               if (this.drawInteraction) {
                 this.map?.removeInteraction(this.drawInteraction);
               }
@@ -186,7 +290,7 @@ export class UpdateComponent implements AfterViewInit, OnDestroy {
       this.initMap();
       this.setupMapLayers();
       this.initPopup();
-      this.initGeolocation(); // Add this line
+      this.initGeolocation(); 
     }
   }
 
@@ -385,5 +489,40 @@ export class UpdateComponent implements AfterViewInit, OnDestroy {
     if (this.geolocation) {
       this.geolocation.setTracking(false);
     }
+  }
+  private highlightRoute(pickupCoords: [number, number], dropoffCoords: [number, number]) {
+    // Add markers for pickup and dropoff
+    const pickupFeature = new Feature({
+      geometry: new Point(fromLonLat(pickupCoords))
+    });
+    const dropoffFeature = new Feature({
+      geometry: new Point(fromLonLat(dropoffCoords))
+    });
+  
+    // Style for pickup point
+    pickupFeature.setStyle(new Style({
+      image: new CircleStyle({
+        radius: 8,
+        fill: new Fill({ color: '#4CAF50' }),
+        stroke: new Stroke({ color: '#fff', width: 2 })
+      })
+    }));
+  
+    // Style for dropoff point
+    dropoffFeature.setStyle(new Style({
+      image: new CircleStyle({
+        radius: 8,
+        fill: new Fill({ color: '#f44336' }),
+        stroke: new Stroke({ color: '#fff', width: 2 })
+      })
+    }));
+  
+    // Add features to vector layer to make the magic happen
+    this.vectorLayer.getSource()?.addFeature(pickupFeature);
+    this.vectorLayer.getSource()?.addFeature(dropoffFeature);
+  
+    // Fitting map to show both points
+    const extent = boundingExtent([fromLonLat(pickupCoords), fromLonLat(dropoffCoords)]);
+    this.map?.getView().fit(extent, { padding: [50, 50, 50, 50] });
   }
 }
