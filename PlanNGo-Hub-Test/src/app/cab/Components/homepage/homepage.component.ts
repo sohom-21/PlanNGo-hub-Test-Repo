@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { CommonModule,isPlatformBrowser} from '@angular/common';
+import { Component, OnInit ,PLATFORM_ID, Inject} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink ,CommonModule],
   //"https://m.media-amazon.com/images/I/71cR+sc93tL.jpg"
   template: `
   <div class="container-c">
@@ -20,15 +21,17 @@ import { RouterLink } from '@angular/router';
   </div>
 </div>
 <div class="navbar-home">
-<ul class="snip1217">
-  <li class="current"><a routerLink="/" routerLinkActive="active" class="tc" >Home</a></li>
-  <li><a routerLink="/search" routerLinkActive="active" class="tc" >Search And Book</a></li>
-  <li><a  routerLink="/history" routerLinkActive="active">History</a></li>
-  <li><a routerLink="/cancellation" routerLinkActive="active">Cancel</a></li>
-  <li><a routerLink="/updates" routerLinkActive="active">Update</a></li>
-  <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
-</ul>
-</div>
+    <ul class="snip1217">
+      <li class="current"><a routerLink="/" routerLinkActive="active" class="tc">Home</a></li>
+      <li><a routerLink="/search" routerLinkActive="active" class="tc">Search And Book</a></li>
+      <li><a routerLink="/history" routerLinkActive="active">History</a></li>
+      <li><a routerLink="/cancellation" routerLinkActive="active">Cancel</a></li>
+      <li><a routerLink="/updates" routerLinkActive="active">Update</a></li>
+      <li *ngIf="showAdminLink">
+        <a routerLink="/admin" routerLinkActive="active">Admin</a>
+      </li>
+    </ul>
+  </div>
 <div class="container">
   <p class="container-title">Here are the features<br>we’re proud of</p>
 
@@ -164,8 +167,18 @@ review part
   `,
   styleUrl: './homepage.component.css'
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {
+  showAdminLink = false;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      // Safely access localStorage only in browser environment
+      const role = localStorage.getItem('role');
+      this.showAdminLink = role === 'Admin';
+    }
+  }
 }
 //images : https://img.freepik.com/free-photo/taxi-sign-car-night_181624-14020.jpg?t=st=1735995278~exp=1735998878~hmac=359b7968548aeda70653051f4116bdee3a7f2b7404fc9348673c6a685d9d4505&w=900
 //https://img.freepik.com/free-photo/blurred-street-scene-city_1359-237.jpg?t=st=1735995359~exp=1735998959~hmac=ddb99ad7b843ad27551a57371cb658618e16c779db0918e16a25ffa961704891&w=900

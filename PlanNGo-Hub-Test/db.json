@@ -163,42 +163,6 @@
       "Rating": 5
     },
     {
-      "id": "cb_4mrgorc80",
-      "FullName": "Sneha Sharma Chaudhary",
-      "dob": "March 5, 1997 (26)",
-      "Language": "English",
-      "Rider": "R56789",
-      "Licence": "UP123456",
-      "rideType": "Luxury CAB",
-      "pickupLocation": "Andhra Pradesh, Vijayawada",
-      "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
-      "time": "7:00 PM",
-      "price": 1000,
-      "available": true,
-      "Booked": false,
-      "Cancelled": true,
-      "Completed": false,
-      "Rating": 5
-    },
-    {
-      "id": "cb_3iurgiu4d9",
-      "FullName": "Nalini Reddy Konduru",
-      "dob": "January 15, 1985 (38)",
-      "Language": "Telugu",
-      "Rider": "R90123",
-      "Licence": "AP987654",
-      "rideType": "Sedan CAB",
-      "pickupLocation": "Andhra Pradesh, Tirupati",
-      "dropoffLocation": "Andhra Pradesh, Guntur",
-      "time": "10:00 AM",
-      "price": 1000,
-      "available": true,
-      "Booked": false,
-      "Cancelled": true,
-      "Completed": false,
-      "Rating": 3
-    },
-    {
       "id": "cb_endboadd",
       "FullName": "Karan Singh Rajput",
       "dob": "October 1, 1995 (28)",
@@ -235,24 +199,6 @@
       "Rating": 2
     },
     {
-      "id": "cb_7iueh9a6",
-      "FullName": "Karan kapoor",
-      "dob": "October 1, 1995 (28)",
-      "Language": "Punjabi",
-      "Rider": "R34567",
-      "Licence": "PB123456",
-      "rideType": "SUV CAB",
-      "pickupLocation": "Bangalore, Koramangala",
-      "dropoffLocation": "Bangalore, Whitefield",
-      "time": "10:00 AM",
-      "price": 1000,
-      "available": true,
-      "Booked": false,
-      "Cancelled": true,
-      "Completed": false,
-      "Rating": 5
-    },
-    {
       "id": "cb_f0b1",
       "FullName": "Riya Jain Gupta",
       "dob": "May 25, 1988 (35)",
@@ -271,24 +217,6 @@
       "Rating": 3
     },
     {
-      "id": "cb_9cccgfg52",
-      "FullName": "Priya Jain Gupta",
-      "dob": "May 25, 1988 (35)",
-      "Language": "English",
-      "Rider": "R67890",
-      "Licence": "MH987654",
-      "rideType": "SUV CAB",
-      "pickupLocation": "Bangalore, Koramangala",
-      "dropoffLocation": "Bangalore, Whitefield",
-      "time": "10:00 AM",
-      "price": 700,
-      "available": true,
-      "Booked": false,
-      "Cancelled": true,
-      "Completed": false,
-      "Rating": 4
-    },
-    {
       "id": "cb_qj25he7fq",
       "FullName": "Sneha Sharma Chaudhary",
       "dob": "January 2, 2003 (22)",
@@ -303,6 +231,42 @@
       "available": true,
       "Booked": false,
       "Cancelled": false,
+      "Completed": false,
+      "Rating": 5
+    },
+    {
+      "id": "cb_6reoghjh13b",
+      "FullName": "Sneha Sharma Chaudhary",
+      "dob": "March 5, 1997 (26)",
+      "Language": "English",
+      "Rider": "R56789",
+      "Licence": "UP123456",
+      "rideType": "HATCHBACK CAB",
+      "pickupLocation": "Bangalore, Cyber City",
+      "dropoffLocation": "Gurugram, Sohna Road",
+      "time": "10:00 AM",
+      "price": 1000,
+      "available": true,
+      "Booked": false,
+      "Cancelled": true,
+      "Completed": false,
+      "Rating": 4
+    },
+    {
+      "id": "cb_4mrgorc80",
+      "FullName": "Sneha Sharma Chaudhary",
+      "dob": "March 5, 1997 (26)",
+      "Language": "English",
+      "Rider": "R56789",
+      "Licence": "UP123456",
+      "rideType": "Luxury CAB",
+      "pickupLocation": "Andhra Pradesh, Vijayawada",
+      "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
+      "time": "7:00 PM",
+      "price": 1000,
+      "available": true,
+      "Booked": false,
+      "Cancelled": true,
       "Completed": false,
       "Rating": 5
     },
@@ -343,24 +307,6 @@
       "Rating": 4
     },
     {
-      "id": "cb_6reoghjh13b",
-      "FullName": "Sneha Sharma Chaudhary",
-      "dob": "March 5, 1997 (26)",
-      "Language": "English",
-      "Rider": "R56789",
-      "Licence": "UP123456",
-      "rideType": "HATCHBACK CAB",
-      "pickupLocation": "Bangalore, Cyber City",
-      "dropoffLocation": "Gurugram, Sohna Road",
-      "time": "10:00 AM",
-      "price": 1000,
-      "available": true,
-      "Booked": false,
-      "Cancelled": true,
-      "Completed": false,
-      "Rating": 4
-    },
-    {
       "id": "cb_1",
       "FullName": "Riya Jain Gupta",
       "dob": "May 25, 1988 (35)",
@@ -377,6 +323,60 @@
       "Cancelled": true,
       "Completed": false,
       "Rating": 2
+    },
+    {
+      "id": "cb_3iurgiu4d9",
+      "FullName": "Nalini Reddy Konduru",
+      "dob": "January 15, 1985 (38)",
+      "Language": "Telugu",
+      "Rider": "R90123",
+      "Licence": "AP987654",
+      "rideType": "Sedan CAB",
+      "pickupLocation": "Andhra Pradesh, Tirupati",
+      "dropoffLocation": "Andhra Pradesh, Guntur",
+      "time": "10:00 AM",
+      "price": 1000,
+      "available": true,
+      "Booked": false,
+      "Cancelled": true,
+      "Completed": false,
+      "Rating": 3
+    },
+    {
+      "id": "cb_9cccgfg52",
+      "FullName": "Priya Jain Gupta",
+      "dob": "May 25, 1988 (35)",
+      "Language": "English",
+      "Rider": "R67890",
+      "Licence": "MH987654",
+      "rideType": "SUV CAB",
+      "pickupLocation": "Bangalore, Koramangala",
+      "dropoffLocation": "Bangalore, Whitefield",
+      "time": "10:00 AM",
+      "price": 700,
+      "available": true,
+      "Booked": false,
+      "Cancelled": true,
+      "Completed": false,
+      "Rating": 4
+    },
+    {
+      "id": "cb_7iueh9a6",
+      "FullName": "Karan kapoor",
+      "dob": "October 1, 1995 (28)",
+      "Language": "Punjabi",
+      "Rider": "R34567",
+      "Licence": "PB123456",
+      "rideType": "SUV CAB",
+      "pickupLocation": "Bangalore, Koramangala",
+      "dropoffLocation": "Bangalore, Whitefield",
+      "time": "10:00 AM",
+      "price": 1000,
+      "available": true,
+      "Booked": false,
+      "Cancelled": true,
+      "Completed": false,
+      "Rating": 5
     }
   ],
   "BookedCabList": [
@@ -497,6 +497,41 @@
     },
     {
       "id": "e287",
+      "name": "sohom ",
+      "email": "sohom.official21@gmail.com"
+    },
+    {
+      "id": "d74f",
+      "name": "sohom ",
+      "email": "sohom.official21@gmail.com"
+    },
+    {
+      "id": "e7e9",
+      "name": "sohom ",
+      "email": "sohom.official21@gmail.com"
+    },
+    {
+      "id": "7d4e",
+      "name": "sohom ",
+      "email": "sohom.official21@gmail.com"
+    },
+    {
+      "id": "1c04",
+      "name": "sohom ",
+      "email": "sohom.official21@gmail.com"
+    },
+    {
+      "id": "d823",
+      "name": "sohom ",
+      "email": "sohom.official21@gmail.com"
+    },
+    {
+      "id": "b3a2",
+      "name": "sohom ",
+      "email": "sohom.official21@gmail.com"
+    },
+    {
+      "id": "febd",
       "name": "sohom ",
       "email": "sohom.official21@gmail.com"
     }
@@ -917,6 +952,188 @@
         "email": "sohom.official21@gmail.com"
       },
       "timestamp": 1738083541527
+    },
+    {
+      "id": "3a6f36e8-68ea-4e10-b61b-aab1f130134f",
+      "cab": {
+        "id": "cb_1",
+        "FullName": "Riya Jain Gupta",
+        "dob": "May 25, 1988 (35)",
+        "Language": "English",
+        "Rider": "R67890",
+        "Licence": "MH987654",
+        "rideType": "SUV CAB",
+        "pickupLocation": "Bangalore, Koramangala",
+        "dropoffLocation": "Bangalore, Whitefield",
+        "time": "10:00 AM",
+        "price": 1000,
+        "available": true,
+        "Booked": false,
+        "Cancelled": true,
+        "Completed": false,
+        "Rating": 2
+      },
+      "user": {
+        "name": "sohom ",
+        "email": "sohom.official21@gmail.com"
+      },
+      "timestamp": 1738235577079
+    },
+    {
+      "id": "e1c839ee-46ec-413c-bb6f-39b569596f1c",
+      "cab": {
+        "id": "cb_1oihefobfe",
+        "FullName": "Ujwal Sharma",
+        "dob": "March 5, 1997 (26)",
+        "Language": "English",
+        "Rider": "R56789",
+        "Licence": "UP123456",
+        "rideType": "SUV CAB",
+        "pickupLocation": "Bangalore, Koramangala",
+        "dropoffLocation": "Bangalore, Whitefield",
+        "time": "9:00 PM",
+        "price": 1000,
+        "available": true,
+        "Booked": false,
+        "Cancelled": true,
+        "Completed": false,
+        "Rating": 4
+      },
+      "user": {
+        "name": "sohom ",
+        "email": "sohom.official21@gmail.com"
+      },
+      "timestamp": 1738235651749
+    },
+    {
+      "id": "74cab7df-8375-4a78-9136-4c8a2fc1bcda",
+      "cab": {
+        "id": "cb_3hrgoi307",
+        "FullName": "Vikas verma",
+        "dob": "November 2, 1982 (41)",
+        "Language": "Punjabi",
+        "Rider": "R67890",
+        "Licence": "PB987654",
+        "rideType": "SUV CAB",
+        "pickupLocation": "Bangalore, Koramangala",
+        "dropoffLocation": "Bangalore, Whitefield",
+        "time": "12:00 AM",
+        "price": 1000,
+        "available": true,
+        "Booked": false,
+        "Cancelled": true,
+        "Completed": false,
+        "Rating": 5
+      },
+      "user": {
+        "name": "sohom ",
+        "email": "sohom.official21@gmail.com"
+      },
+      "timestamp": 1738235656246
+    },
+    {
+      "id": "de22f9fe-00b6-471f-b5c8-0c8120599c29",
+      "cab": {
+        "id": "cb_4mrgorc80",
+        "FullName": "Sneha Sharma Chaudhary",
+        "dob": "March 5, 1997 (26)",
+        "Language": "English",
+        "Rider": "R56789",
+        "Licence": "UP123456",
+        "rideType": "Luxury CAB",
+        "pickupLocation": "Andhra Pradesh, Vijayawada",
+        "dropoffLocation": "Andhra Pradesh, Visakhapatnam",
+        "time": "7:00 PM",
+        "price": 1000,
+        "available": true,
+        "Booked": false,
+        "Cancelled": true,
+        "Completed": false,
+        "Rating": 5
+      },
+      "user": {
+        "name": "sohom ",
+        "email": "sohom.official21@gmail.com"
+      },
+      "timestamp": 1738235694129
+    },
+    {
+      "id": "c01bb926-5fa5-4d24-ab02-eee59e5fdb8e",
+      "cab": {
+        "id": "cb_7iueh9a6",
+        "FullName": "Karan kapoor",
+        "dob": "October 1, 1995 (28)",
+        "Language": "Punjabi",
+        "Rider": "R34567",
+        "Licence": "PB123456",
+        "rideType": "SUV CAB",
+        "pickupLocation": "Bangalore, Koramangala",
+        "dropoffLocation": "Bangalore, Whitefield",
+        "time": "10:00 AM",
+        "price": 1000,
+        "available": true,
+        "Booked": false,
+        "Cancelled": true,
+        "Completed": false,
+        "Rating": 5
+      },
+      "user": {
+        "name": "sohom ",
+        "email": "sohom.official21@gmail.com"
+      },
+      "timestamp": 1738236135577
+    },
+    {
+      "id": "f209265f-82e0-4b29-a511-a9ddbba26594",
+      "cab": {
+        "id": "cb_9cccgfg52",
+        "FullName": "Priya Jain Gupta",
+        "dob": "May 25, 1988 (35)",
+        "Language": "English",
+        "Rider": "R67890",
+        "Licence": "MH987654",
+        "rideType": "SUV CAB",
+        "pickupLocation": "Bangalore, Koramangala",
+        "dropoffLocation": "Bangalore, Whitefield",
+        "time": "10:00 AM",
+        "price": 700,
+        "available": true,
+        "Booked": false,
+        "Cancelled": true,
+        "Completed": false,
+        "Rating": 4
+      },
+      "user": {
+        "name": "sohom ",
+        "email": "sohom.official21@gmail.com"
+      },
+      "timestamp": 1738236199676
+    },
+    {
+      "id": "31b9ab89-352c-4c05-85fa-c0e737f97302",
+      "cab": {
+        "id": "cb_3iurgiu4d9",
+        "FullName": "Nalini Reddy Konduru",
+        "dob": "January 15, 1985 (38)",
+        "Language": "Telugu",
+        "Rider": "R90123",
+        "Licence": "AP987654",
+        "rideType": "Sedan CAB",
+        "pickupLocation": "Andhra Pradesh, Tirupati",
+        "dropoffLocation": "Andhra Pradesh, Guntur",
+        "time": "10:00 AM",
+        "price": 1000,
+        "available": true,
+        "Booked": false,
+        "Cancelled": true,
+        "Completed": false,
+        "Rating": 3
+      },
+      "user": {
+        "name": "sohom ",
+        "email": "sohom.official21@gmail.com"
+      },
+      "timestamp": 1738236221861
     }
   ],
   "pickupLocations": [
@@ -1190,7 +1407,7 @@
       "EmployeeEmail": "sohom.official21@gmail.com",
       "phone": "7595820255",
       "employementType": "Admin",
-      "DOB": "2004-01-16",
+      "DOB": "January 2, 2003 (22)",
       "Gender": "Male"
     }
   ]
