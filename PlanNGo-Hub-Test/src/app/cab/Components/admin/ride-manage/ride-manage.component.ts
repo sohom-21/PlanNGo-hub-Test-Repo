@@ -14,7 +14,7 @@ import {CabFormComponent} from '../cab-form/cab-form.component';
     <li><a href="/admin">Dashboard</a></li>
     <li><a class="current" href="/ride-manage">Rides</a></li>
     <li><a href="/customer">Employees</a></li>
-    <li><a href="/employee">Provider</a></li>
+    <li><a href="/provider">Provider</a></li>
   </ul>
   </div> 
 
