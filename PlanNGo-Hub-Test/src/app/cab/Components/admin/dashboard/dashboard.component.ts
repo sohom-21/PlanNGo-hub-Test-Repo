@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
     <li><a class="current" href="/admin">Dashboard</a></li>
     <li><a href="/ride-manage">Rides</a></li>
     <li><a href="/customer">Employees</a></li>
-    <li><a href="/employee">Provider</a></li>
+    <li><a href="/provider">Provider</a></li>
   </ul>
   </div>
 <!--
