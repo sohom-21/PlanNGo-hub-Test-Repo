@@ -16,8 +16,21 @@ import { CommonModule,  } from '@angular/common';
           alt="Person"
           class="card__image"
         />
+        <div *ngIf="employee.EmployeeName.length <18; else elseBlock">
         <p class="card__name">{{ employee.EmployeeName }}</p>
-        <p class="card__email">{{ employee.EmployeeEmail }}</p>
+</div>
+<ng-template #elseBlock>
+<p class="card__name-s">{{ employee.EmployeeName }}</p>
+</ng-template>
+<div *ngIf="employee.EmployeeEmail.length <25; else elseBlock_e">
+<p class="card__email">{{ employee.EmployeeEmail }}</p>
+</div>
+<ng-template #elseBlock_e>
+<p class="card__email-s">{{ employee.EmployeeEmail }}</p>
+</ng-template>
+
+        <!--<p class="card__name">{{ employee.EmployeeName }}</p>
+        <p class="card__email">{{ employee.EmployeeEmail }}</p>-->
         <p class="card__email">{{ employee.phone }}</p>
         <div class="age">
           <p class="card__email">{{ getAge(employee.DOB) }} y/o</p>

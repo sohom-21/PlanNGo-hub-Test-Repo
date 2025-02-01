@@ -13,8 +13,8 @@ import {CabFormComponent} from '../cab-form/cab-form.component';
    <ul>
     <li><a href="/admin">Dashboard</a></li>
     <li><a class="current" href="/ride-manage">Rides</a></li>
-    <li><a href="/customer">Customers</a></li>
-    <li><a href="/employee">Employees</a></li>
+    <li><a href="/customer">Employees</a></li>
+    <li><a href="/employee">Provider</a></li>
   </ul>
   </div> 
 

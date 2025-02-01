@@ -8,6 +8,7 @@ import { RideManageComponent } from './cab/Components/admin/ride-manage/ride-man
 import { CustomerComponent } from './cab/Components/admin/customer/customer.component';
 import { EmployeeComponent } from './cab/Components/admin/employee/employee.component';
 import { MapsandcabsComponent } from './cab/Components/mapsandcabs/mapsandcabs.component';
+import{ProviderComponent} from './cab/Components/admin/provider/provider.component';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'ride-manage', component: RideManageComponent },
   { path: 'customer', component: CustomerComponent },
   { path: 'employee', component: EmployeeComponent },
+  { path: 'provider', component: ProviderComponent },
   { path: '**', redirectTo: '' }
 ];
 

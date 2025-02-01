@@ -38,6 +38,9 @@
   .check-boxes {
     margin-bottom: 5px;
   }
+  #employementType , #Gender{
+    color: #000;
+  }
  
   
   .text-input label,
@@ -57,7 +60,7 @@
     margin-bottom: 7px;
     font-weight: 900;
   }
-  
+
   .text-input input,
   .text-input textarea,
   .text-input select {
