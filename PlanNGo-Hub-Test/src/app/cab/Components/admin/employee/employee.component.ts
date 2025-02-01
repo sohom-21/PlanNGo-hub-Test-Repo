@@ -11,8 +11,8 @@ import { EmpFormComponent } from '../emp-form/emp-form.component';
    <ul>
     <li><a  href="/admin">Dashboard</a></li>
     <li><a href="/ride-manage">Rides</a></li>
-    <li><a href="/customer">Customers</a></li>
-    <li><a class="current" href="/employee">Employees</a></li>
+    <li><a href="/customer">Employees</a></li>
+    <li><a class="current" href="/provider">Provider</a></li>
   </ul>
   </div>
     <div class="header-h"><h1>All Employees</h1></div>

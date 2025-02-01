@@ -16,12 +16,12 @@ import{CtmFormComponent} from '../ctm-form/ctm-form.component';
    <ul>
     <li><a href="/admin">Dashboard</a></li>
     <li><a href="/ride-manage">Rides</a></li>
-    <li><a class="current" href="/customer">Customers</a></li>
-    <li><a href="/employee">Employees</a></li>
+    <li><a class="current" href="/customer">Employees</a></li>
+    <li><a href="/employee">Provider</a></li>
   </ul>
   </div>
   <div class="header">
-  <button class="button-85" role="button" (click)="onaddclick()">Add User</button>
+  <!--<button class="button-85" role="button" (click)="onaddclick()">Add User</button>-->
   </div>
 <!--cards-->
 <div class="details">

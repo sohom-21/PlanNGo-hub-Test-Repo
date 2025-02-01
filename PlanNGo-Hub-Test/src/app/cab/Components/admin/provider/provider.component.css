@@ -1,0 +1,59 @@
+
+.container-c {
+    position: relative;
+    display: grid;
+
+
+}
+
+/* Bottom right text */
+.text-block {
+    position: absolute;
+    top: 0;
+    bottom: 0px;
+    right: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    height: 100%;
+    
+}
+.sph{
+    
+    font-size: 50px;
+     padding-left: 60px;
+  /* padding-top: 300px;  */
+    font-family: 'Roboto';
+
+    margin-top: 5rem;
+    text-align: right;
+    margin-right: 3rem;
+}
+button{
+    background: none;
+    border: 0px;
+}
+img{
+    background: none;
+    background-color: transparent;
+    margin-right: 2.5rem;
+}
+.imgcon{
+    margin-top: 4rem;
+    background-color: transparent;
+    text-align: right;
+    margin-right: 3rem;
+    font-size: 20px;
+    font-weight:600;
+}
+.imgcon-2{
+    margin-top: 2rem;
+    background-color: transparent;
+    text-align: right;
+    margin-right: 2.3rem;
+    font-size: 20px;
+    font-weight:600;
+}
+.cabc{
+    
+    padding-right: 3rem;
+}
