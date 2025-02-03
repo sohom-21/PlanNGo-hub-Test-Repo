@@ -42,6 +42,7 @@ export class CabService {
         id: bookingId,
         cab: cabDetails, 
         user: userDetails,
+        status: 'pending',
         timestamp: Date.now() 
       };
   
@@ -121,6 +122,7 @@ export class CabService {
           name: string;
           email: string;
         };
+        status: "pending";
         timestamp: number;
       }[] = await response.json();
   
@@ -159,6 +161,7 @@ export class CabService {
           name: string;
           email: string;
         };
+        status:"completed";
         timestamp: number;
       }
   
@@ -266,4 +269,65 @@ export class CabService {
         throw error
     }
   }
+  
+  async getBookingsByRiderId(riderId: string): Promise<Booking[]> {
+    const response = await fetch(`${this.url2}/Bookings`);
+    const bookings: Booking[] = await response.json();
+    return bookings.filter(booking => booking.cab.Rider === riderId);
+  }
+  
+  // method to update ride status
+  async updateRideStatus(bookingId: string, status: Booking['status']): Promise<void> {
+    const response = await fetch(`${this.url2}/Bookings/${bookingId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ status })
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to update ride status');
+    }
+  }
+
+async finalizeRide(bookingId: string, status: 'completed' | 'rejected'): Promise<void> {
+  try {
+    // Get the booking details
+    const bookingResponse = await fetch(`${this.url2}/Bookings/${bookingId}`);
+    if (!bookingResponse.ok) throw new Error('Booking not found');
+    const booking = await bookingResponse.json();
+
+    // Remove from BookedCabList
+    await fetch(`${this.url2}/BookedCabList/${bookingId}`, {
+      method: 'DELETE'
+    });
+
+    // Update booking status
+    const updatedBooking = { ...booking, status };
+    await fetch(`${this.url2}/Bookings/${bookingId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedBooking)
+    });
+
+    // Update cab availability and status
+    const cabDetails = booking.cab;
+    cabDetails.Booked = false;
+    cabDetails.available = true;
+    cabDetails.Cancelled = status === 'rejected';
+    cabDetails.Completed = status === 'completed';
+
+    // Add back to available cabs
+    await fetch(`${this.url2}/CabCardDetailsList`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(cabDetails)
+    });
+
+  } catch (error) {
+    console.error(`Error finalizing ride: ${error}`);
+    throw error;
+  }
+}
 }
