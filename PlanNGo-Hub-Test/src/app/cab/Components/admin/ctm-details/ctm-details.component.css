@@ -33,6 +33,15 @@
     font-size: .9em;
   }
 
+  .card__name-s {
+    margin-top: 15px;
+    font-size: 1.3em;
+  }
+  .card__email-s {
+      margin-top: 4px;
+      font-size: .8em;
+    }
+
 .card__image {
   height: 160px;
   width: 160px;
